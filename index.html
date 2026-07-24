@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown Studio – Custom Date Countdown &amp; Timer Tool</title>
+<meta name="description" content="Countdown Studio: a free countdown timer and custom date countdown tool. Track birthdays and launch days down to the second, or run a simple minute timer. Bilingual English/German.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://junpingkoch-web.github.io/countdown-timer-app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B3%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<!-- Google AdSense: replace data-ad-client below with your real ca-pub-XXXX ID once your site is approved. -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title">
+        <span class="title-icon" aria-hidden="true">⏳</span>
+        <span class="title-text" data-i18n="appTitle">Countdown Studio</span>
+        <span class="title-icon" aria-hidden="true">🎉</span>
+      </h1>
+      <div class="header-actions">
+        <button id="helpToggle" class="icon-btn help-btn-3d" type="button" aria-label="Tips" aria-haspopup="dialog">?</button>
+        <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
+          <span class="lang-flag">DE</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Ad slot: top banner. Replace with a real AdSense <ins> unit once approved, e.g.:
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    <div class="ad-slot">
+      <div class="ad-box" data-i18n="adLabel">Advertisement</div>
+    </div>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="timer" role="tab" aria-selected="true" data-i18n="tabTimer">Timer</button>
+      <button class="tab-btn" data-tab="date" role="tab" aria-selected="false" data-i18n="tabDate">Date Countdown</button>
+    </nav>
+
+    <!-- TIMER PANEL -->
+    <section class="panel active" id="panel-timer">
+      <div class="card timer-card">
+        <div class="timer-display" id="timerDisplay">25:00</div>
+
+        <div class="timer-inputs" id="timerInputs">
+          <div class="field small">
+            <label for="timerMinutes" data-i18n="minutesLabel">Minutes</label>
+            <input type="number" id="timerMinutes" min="0" max="180" value="25">
+          </div>
+          <div class="field small">
+            <label for="timerSeconds" data-i18n="secondsLabel">Seconds</label>
+            <input type="number" id="timerSeconds" min="0" max="59" value="0">
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button id="timerStart" class="btn btn-primary" type="button" data-i18n="startBtn">Start</button>
+          <button id="timerPause" class="btn btn-secondary" type="button" data-i18n="pauseBtn" disabled>Pause</button>
+          <button id="timerReset" class="btn btn-secondary" type="button" data-i18n="resetBtn">Reset</button>
+        </div>
+        <p class="timer-status" id="timerStatus"></p>
+      </div>
+    </section>
+
+    <!-- Ad slot: in-content rectangle. Replace with a real AdSense <ins> unit once approved. -->
+    <div class="ad-slot in-content">
+      <div class="ad-box" data-i18n="adLabel">Advertisement</div>
+    </div>
+
+    <!-- DATE COUNTDOWN PANEL -->
+    <section class="panel" id="panel-date">
+      <form id="dateForm" class="card form-card">
+        <div class="field">
+          <label for="eventName" data-i18n="eventNameLabel">Event name</label>
+          <input type="text" id="eventName" data-i18n-placeholder="eventNamePlaceholder" placeholder="e.g. Birthday, Launch day..." required maxlength="40">
+        </div>
+        <div class="field">
+          <label for="eventDate" data-i18n="eventDateLabel">Target date &amp; time</label>
+          <input type="datetime-local" id="eventDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n="addCountdownBtn">Add countdown</button>
+      </form>
+
+      <div id="countdownList" class="countdown-list">
+        <p class="empty-state" id="emptyState" data-i18n="emptyState">No countdowns yet. Add your first event above.</p>
+      </div>
+    </section>
+
+    <!-- Ad slot: bottom banner. Replace with a real AdSense <ins> unit once approved. -->
+    <div class="ad-slot">
+      <div class="ad-box" data-i18n="adLabel">Advertisement</div>
+    </div>
+  </div>
+
+  <!-- Support button: replace the href with your own Buy Me a Coffee / Ko-fi page if different. -->
+  <a
+    class="support-fab"
+    href="https://www.buymeacoffee.com/junping.koch"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-i18n-title="coffeeTooltip"
+    title="Enjoyed this tool? Buy me a coffee"
+  >
+    <span aria-hidden="true">☕</span>
+    <span data-i18n="coffeeBtn">Buy me a coffee</span>
+  </a>
+
+  <div id="helpModal" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <div class="modal-head">
+        <h2 id="helpTitle" data-i18n="helpTitle">Tips &amp; how to use</h2>
+        <button id="helpClose" class="icon-btn" type="button" aria-label="Close">&times;</button>
+      </div>
+
+      <h3 data-i18n="helpTimerHeading">Timer</h3>
+      <ul class="tips-list">
+        <li data-i18n="helpTip4">Set minutes and seconds, then press Start to begin the countdown.</li>
+        <li data-i18n="helpTip5">Use Pause / Resume to stop and continue without losing the remaining time.</li>
+        <li data-i18n="helpTip6">Reset at any time to go back to your chosen duration.</li>
+      </ul>
+
+      <h3 data-i18n="helpDateHeading">Date Countdown</h3>
+      <ul class="tips-list">
+        <li data-i18n="helpTip1">Add as many events as you like — each one keeps counting live in the background.</li>
+        <li data-i18n="helpTip2">Events are sorted automatically, soonest first.</li>
+        <li data-i18n="helpTip3">Click "Delete" on a card to remove an event you no longer need.</li>
+      </ul>
+
+      <h3 data-i18n="helpGeneralHeading">Good to know</h3>
+      <ul class="tips-list">
+        <li data-i18n="helpTip7">Your countdowns and language choice are saved automatically in this browser, so they're still here next time you visit.</li>
+        <li data-i18n="helpTip8">Use the language button in the top right to switch the whole page between English and German.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
