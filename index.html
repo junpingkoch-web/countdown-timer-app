@@ -83,9 +83,11 @@
       </h1>
       <div class="header-actions">
         <button id="helpToggle" class="icon-btn help-btn-3d" type="button" aria-label="Tips" aria-haspopup="dialog">?</button>
-        <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
-          <span class="lang-flag">DE</span>
-        </button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="zh" type="button">中文</button>
+          <button class="lang-btn active" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+        </div>
       </div>
     </header>
 

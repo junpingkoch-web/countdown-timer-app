@@ -5,6 +5,59 @@
   const LANG_KEY = "countdownStudio.lang";
 
   const i18n = {
+    zh: {
+      appTitle: "倒计时工作室",
+      tabDate: "日期倒计时",
+      tabTimer: "计时器",
+      eventNameLabel: "事件名称",
+      eventNamePlaceholder: "例如：生日、发布日……",
+      eventDateLabel: "目标日期与时间",
+      addCountdownBtn: "添加倒计时",
+      emptyState: "还没有倒计时。在上方添加你的第一个事件吧。",
+      days: "天",
+      hours: "小时",
+      minutes: "分",
+      seconds: "秒",
+      deleteBtn: "删除",
+      completedBanner: "时间到！🎉",
+      minutesLabel: "分钟",
+      secondsLabel: "秒数",
+      startBtn: "开始",
+      pauseBtn: "暂停",
+      resumeBtn: "继续",
+      resetBtn: "重置",
+      timerRunning: "计时中…",
+      timerPaused: "已暂停",
+      timerDone: "时间到！",
+      helpTitle: "使用技巧与说明",
+      helpDateHeading: "日期倒计时",
+      helpTip1: "添加任意多个事件——每个事件都会在后台持续实时计时。",
+      helpTip2: "事件会自动排序，最近的排在最前面。",
+      helpTip3: "点击卡片上的「删除」即可移除不再需要的事件。",
+      helpTimerHeading: "计时器",
+      helpTip4: "设置分钟和秒数，然后点击「开始」启动倒计时。",
+      helpTip5: "使用「暂停/继续」可以随时停止和恢复，不会丢失剩余时间。",
+      helpTip6: "随时点击「重置」回到你设定的时长。",
+      helpGeneralHeading: "小提示",
+      helpTip7: "你的倒计时和语言选择会自动保存在这个浏览器里，下次访问依然还在。",
+      helpTip8: "使用右上角的语言按钮，可以在中文、English 和 Deutsch 之间切换整个页面。",
+      adLabel: "广告",
+      coffeeBtn: "请我喝杯咖啡",
+      coffeeTooltip: "喜欢这个工具？请我喝杯咖啡",
+      explainTitle: "倒计时工作室是怎么运作的？",
+      explainP1: "这个页面其实是两个独立的小工具打包在一起：一个基于分钟的计时器（类似番茄工作法），和一个针对具体目标日期的倒计时。两者都完全依靠浏览器内的 JavaScript 时间戳运算——不涉及任何服务器，也不会向外发送任何数据。",
+      explainP2: "两者的数据保存方式不同：你添加的日期倒计时事件（以及语言选择）会保存在浏览器本地存储中，下次打开页面时依然存在并继续计时。分钟计时器则不会保存——如果你在计时进行中刷新页面，它会重置为你最后一次输入的时长。",
+      explainP3: "当计时器或倒计时归零时，页面只会显示一个页内提示横幅，并不会发送操作系统级别的通知，所以只有在这个标签页保持打开并可见时才能看到提示。如果你打算在倒计时期间切换到其他标签页或应用，请留意这一点。",
+      faqTitle: "常见问题",
+      faq: [
+        { q: "关掉标签页或重启电脑后，倒计时还会继续吗？", a: "你的事件和目标日期会保存在这个浏览器里，重新打开页面时，倒计时会根据当前真实时间正确计算——它不是在关闭期间真的在后台运行，但由于计算基于真实时钟，数据不会丢失。" },
+        { q: "刷新页面后，分钟计时器的进度会保留吗？", a: "不会。只有日期倒计时事件和语言选择会被保存；如果计时器正在运行时你刷新或离开页面，它会重置为你最后设置的时长。" },
+        { q: "时间到了会收到通知吗？", a: "只会在页面内显示一个提示横幅——不会有操作系统级别的推送通知，所以你需要让这个标签页保持打开并可见才能看到。" },
+        { q: "我可以同时添加多个日期倒计时吗？", a: "可以。你可以添加任意多个事件，它们会自动按时间排序，最近的排在最前面，并且各自独立计时。" },
+        { q: "我的事件或倒计时数据会被发送到服务器吗？", a: "不会。所有数据都只保存在你浏览器的本地存储中；没有账号系统、没有后端，也不会向任何地方传输数据。" },
+        { q: "为什么现在也有中文了？", a: "Countdown Studio 最初只支持英文和德文，现在已经和本站其他工具一样统一为中/英/德三语，可以随时用右上角的语言按钮切换。" }
+      ]
+    },
     en: {
       appTitle: "Countdown Studio",
       tabDate: "Date Countdown",
@@ -41,7 +94,7 @@
       helpTip6: "Reset at any time to go back to your chosen duration.",
       helpGeneralHeading: "Good to know",
       helpTip7: "Your countdowns and language choice are saved automatically in this browser, so they're still here next time you visit.",
-      helpTip8: "Use the language button in the top right to switch the whole page between English and German.",
+      helpTip8: "Use the language switch in the top right to switch the whole page between Chinese, English, and German.",
       adLabel: "Advertisement",
       coffeeBtn: "Buy me a coffee",
       coffeeTooltip: "Enjoyed this tool? Buy me a coffee",
@@ -56,7 +109,7 @@
         { q: "Will I get a notification when the time is up?", a: "Only an on-screen banner within this page — there's no operating-system push notification, so you need to have this tab open and visible to see it." },
         { q: "Can I add more than one date countdown at the same time?", a: "Yes. Add as many events as you like; they're sorted automatically with the soonest one first, and each keeps counting independently." },
         { q: "Are my events or countdown data sent to a server?", a: "No. Everything is stored only in your browser's local storage; there's no account, no backend, and nothing is transmitted anywhere." },
-        { q: "Why is this tool only available in English and German?", a: "Countdown Studio is one of the earlier, simpler tools in this collection and was built bilingual (EN/DE) from the start. Other, later tools on this site use a trilingual (ZH/EN/DE) setup instead." }
+        { q: "Why does this tool now also support Chinese?", a: "Countdown Studio originally launched bilingual (EN/DE); it's now been brought in line with the rest of this site's tools, which use a trilingual (ZH/EN/DE) setup with a language switch in the top right." }
       ]
     },
     de: {
@@ -95,7 +148,7 @@
       helpTip6: "Jederzeit zurücksetzen, um zur gewählten Dauer zurückzukehren.",
       helpGeneralHeading: "Gut zu wissen",
       helpTip7: "Deine Countdowns und die Sprachwahl werden automatisch in diesem Browser gespeichert und sind beim nächsten Besuch noch da.",
-      helpTip8: "Mit dem Sprachbutton oben rechts wechselst du die ganze Seite zwischen Englisch und Deutsch.",
+      helpTip8: "Mit dem Sprachschalter oben rechts wechselst du die ganze Seite zwischen Chinesisch, Englisch und Deutsch.",
       adLabel: "Anzeige",
       coffeeBtn: "Spendier einen Kaffee",
       coffeeTooltip: "Hat dir das Tool geholfen? Spendier einen Kaffee",
@@ -110,12 +163,22 @@
         { q: "Bekomme ich eine Benachrichtigung, wenn die Zeit abgelaufen ist?", a: "Nur ein Banner direkt auf der Seite — es gibt keine Betriebssystem-Push-Benachrichtigung, du musst diesen Tab also geöffnet und sichtbar haben, um es zu sehen." },
         { q: "Kann ich mehrere Datums-Countdowns gleichzeitig hinzufügen?", a: "Ja. Füge beliebig viele Ereignisse hinzu; sie werden automatisch sortiert, das nächste zuerst, und jedes läuft unabhängig weiter." },
         { q: "Werden meine Ereignisse oder Countdown-Daten an einen Server gesendet?", a: "Nein. Alles wird ausschließlich im lokalen Speicher deines Browsers abgelegt; es gibt kein Konto, kein Backend, nichts wird irgendwohin übertragen." },
-        { q: "Warum gibt es dieses Tool nur auf Englisch und Deutsch?", a: "Countdown Studio ist eines der früheren, einfacheren Tools in dieser Sammlung und wurde von Anfang an zweisprachig (EN/DE) gebaut. Andere, später entstandene Tools auf dieser Seite nutzen stattdessen ein dreisprachiges (ZH/EN/DE) Konzept." }
+        { q: "Warum gibt es dieses Tool jetzt auch auf Chinesisch?", a: "Countdown Studio ist ursprünglich zweisprachig (EN/DE) gestartet und wurde jetzt an die übrigen Tools dieser Seite angeglichen, die ein dreisprachiges (ZH/EN/DE) Konzept mit Sprachschalter oben rechts nutzen." }
       ]
     }
   };
 
-  let currentLang = localStorage.getItem(LANG_KEY) || "en";
+  let currentLang = "en";
+  try {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved && i18n[saved]) {
+      currentLang = saved;
+    } else {
+      const nav = (navigator.language || "en").toLowerCase();
+      if (nav.indexOf("zh") === 0) currentLang = "zh";
+      else if (nav.indexOf("de") === 0) currentLang = "de";
+    }
+  } catch (e) {}
 
   function t(key) {
     return i18n[currentLang][key] || i18n.en[key] || key;
@@ -152,15 +215,19 @@
     document.querySelectorAll("[data-i18n-title]").forEach((el) => {
       el.setAttribute("title", t(el.getAttribute("data-i18n-title")));
     });
-    document.getElementById("langToggle").querySelector(".lang-flag").textContent = t("langButtonLabel");
+    document.querySelectorAll(".lang-switch .lang-btn").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.lang === currentLang);
+    });
     renderCountdowns();
     updateTimerStatusText();
   }
 
-  document.getElementById("langToggle").addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "de" : "en";
-    localStorage.setItem(LANG_KEY, currentLang);
-    applyLanguage();
+  document.querySelectorAll(".lang-switch .lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentLang = btn.dataset.lang;
+      localStorage.setItem(LANG_KEY, currentLang);
+      applyLanguage();
+    });
   });
 
   // ---------- Help modal ----------
