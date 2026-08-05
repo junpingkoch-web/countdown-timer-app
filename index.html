@@ -9,6 +9,40 @@
 <link rel="canonical" href="https://junpingkoch-web.github.io/countdown-timer-app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B3%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
+<!-- Structured data: FAQPage (English defaults; keep in sync with the "en" faq array in script.js) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the countdown keep running if I close the tab or restart my computer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your event and its target date are saved in this browser, so when you reopen the page the countdown picks up correctly from the actual current time." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the minute Timer save its progress if I reload the page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Only your date-countdown events and language choice are saved; the minute Timer resets to your last-entered duration if you reload while it's running." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get a notification when the time is up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only an on-screen banner within this page — there's no operating-system push notification, so this tab needs to be open and visible." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add more than one date countdown at the same time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Add as many events as you like; they're sorted automatically with the soonest one first." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my events or countdown data sent to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Everything is stored only in your browser's local storage; there's no account, no backend, and nothing is transmitted anywhere." }
+    }
+  ]
+}
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -118,6 +152,25 @@
     <div class="ad-slot">
       <div class="ad-box" data-i18n="adLabel">Advertisement</div>
     </div>
+
+    <section class="explain-section">
+      <h2 data-i18n="explainTitle">How does Countdown Studio actually work?</h2>
+      <p data-i18n="explainP1"></p>
+      <p data-i18n="explainP2"></p>
+      <p data-i18n="explainP3"></p>
+
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
+    <footer class="disclaimer">
+      <nav class="footer-links">
+        <a href="https://junpingkoch-web.github.io/about.html">About</a>
+        <a href="https://junpingkoch-web.github.io/contact.html">Contact</a>
+        <a href="https://junpingkoch-web.github.io/privacy.html">Privacy</a>
+        <a href="https://junpingkoch-web.github.io/terms.html">Terms</a>
+      </nav>
+    </footer>
   </div>
 
   <!-- Support button: replace the href with your own Buy Me a Coffee / Ko-fi page if different. -->

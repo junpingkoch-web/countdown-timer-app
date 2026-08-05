@@ -44,7 +44,20 @@
       helpTip8: "Use the language button in the top right to switch the whole page between English and German.",
       adLabel: "Advertisement",
       coffeeBtn: "Buy me a coffee",
-      coffeeTooltip: "Enjoyed this tool? Buy me a coffee"
+      coffeeTooltip: "Enjoyed this tool? Buy me a coffee",
+      explainTitle: "How does Countdown Studio actually work?",
+      explainP1: "This page is really two small independent tools bundled together: a minute-based Timer (Pomodoro-style) and a Date Countdown for specific target dates. Both run purely on JavaScript timestamp math inside your browser — there's no server involved, and nothing is sent anywhere.",
+      explainP2: "Persistence works differently for each: your date-countdown events (and your language choice) are saved to this browser's local storage, so they're still there and still counting the next time you open the page. The minute Timer, on the other hand, isn't saved — if you reload the page while it's running, it resets to your last-entered duration.",
+      explainP3: "When a timer or countdown reaches zero, the page shows an on-screen banner — it doesn't send an operating-system notification, so you'll only see it while this tab is open and visible. Keep that in mind if you're planning to switch away to another tab or app while it counts down.",
+      faqTitle: "Frequently Asked Questions",
+      faq: [
+        { q: "Does the countdown keep running if I close the tab or restart my computer?", a: "Your event and its target date are saved in this browser, so when you reopen the page the countdown picks up correctly from the actual current time — it isn't literally running in the background while closed, but the math is based on the real clock, so nothing is lost." },
+        { q: "Does the minute Timer save its progress if I reload the page?", a: "No. Only your date-countdown events and language choice are saved; the minute Timer resets to your last-entered duration if you reload or navigate away while it's running." },
+        { q: "Will I get a notification when the time is up?", a: "Only an on-screen banner within this page — there's no operating-system push notification, so you need to have this tab open and visible to see it." },
+        { q: "Can I add more than one date countdown at the same time?", a: "Yes. Add as many events as you like; they're sorted automatically with the soonest one first, and each keeps counting independently." },
+        { q: "Are my events or countdown data sent to a server?", a: "No. Everything is stored only in your browser's local storage; there's no account, no backend, and nothing is transmitted anywhere." },
+        { q: "Why is this tool only available in English and German?", a: "Countdown Studio is one of the earlier, simpler tools in this collection and was built bilingual (EN/DE) from the start. Other, later tools on this site use a trilingual (ZH/EN/DE) setup instead." }
+      ]
     },
     de: {
       appTitle: "Countdown Studio",
@@ -85,7 +98,20 @@
       helpTip8: "Mit dem Sprachbutton oben rechts wechselst du die ganze Seite zwischen Englisch und Deutsch.",
       adLabel: "Anzeige",
       coffeeBtn: "Spendier einen Kaffee",
-      coffeeTooltip: "Hat dir das Tool geholfen? Spendier einen Kaffee"
+      coffeeTooltip: "Hat dir das Tool geholfen? Spendier einen Kaffee",
+      explainTitle: "Wie funktioniert Countdown Studio eigentlich?",
+      explainP1: "Diese Seite ist eigentlich zwei kleine, unabhängige Tools in einem: ein minutenbasierter Timer (im Pomodoro-Stil) und ein Datums-Countdown für konkrete Zieltermine. Beide laufen rein über JavaScript-Zeitstempel-Berechnung in deinem Browser — es gibt keinen Server, nichts wird irgendwohin gesendet.",
+      explainP2: "Die Speicherung funktioniert bei beiden unterschiedlich: Deine Datums-Countdown-Ereignisse (und deine Sprachwahl) werden im lokalen Speicher dieses Browsers gesichert, sodass sie beim nächsten Öffnen der Seite noch da sind und weiterlaufen. Der Minuten-Timer dagegen wird nicht gespeichert — lädst du die Seite neu, während er läuft, setzt er sich auf deine zuletzt eingegebene Dauer zurück.",
+      explainP3: "Wenn ein Timer oder Countdown bei null ankommt, zeigt die Seite ein Banner direkt auf der Seite an — es wird keine Betriebssystem-Benachrichtigung gesendet, du siehst es also nur, solange dieser Tab geöffnet und sichtbar ist. Denk daran, falls du planst, während des Countdowns zu einem anderen Tab oder einer anderen App zu wechseln.",
+      faqTitle: "Häufig gestellte Fragen",
+      faq: [
+        { q: "Läuft der Countdown weiter, wenn ich den Tab schließe oder den Computer neu starte?", a: "Dein Ereignis und sein Zieldatum werden in diesem Browser gespeichert. Öffnest du die Seite später wieder, berechnet sich der Countdown korrekt anhand der tatsächlichen aktuellen Zeit — er läuft nicht wörtlich im Hintergrund weiter, aber die Berechnung basiert auf der echten Uhrzeit, es geht also nichts verloren." },
+        { q: "Speichert der Minuten-Timer seinen Fortschritt, wenn ich die Seite neu lade?", a: "Nein. Nur deine Datums-Countdown-Ereignisse und deine Sprachwahl werden gespeichert; der Minuten-Timer setzt sich auf deine zuletzt eingegebene Dauer zurück, wenn du die Seite neu lädst, während er läuft." },
+        { q: "Bekomme ich eine Benachrichtigung, wenn die Zeit abgelaufen ist?", a: "Nur ein Banner direkt auf der Seite — es gibt keine Betriebssystem-Push-Benachrichtigung, du musst diesen Tab also geöffnet und sichtbar haben, um es zu sehen." },
+        { q: "Kann ich mehrere Datums-Countdowns gleichzeitig hinzufügen?", a: "Ja. Füge beliebig viele Ereignisse hinzu; sie werden automatisch sortiert, das nächste zuerst, und jedes läuft unabhängig weiter." },
+        { q: "Werden meine Ereignisse oder Countdown-Daten an einen Server gesendet?", a: "Nein. Alles wird ausschließlich im lokalen Speicher deines Browsers abgelegt; es gibt kein Konto, kein Backend, nichts wird irgendwohin übertragen." },
+        { q: "Warum gibt es dieses Tool nur auf Englisch und Deutsch?", a: "Countdown Studio ist eines der früheren, einfacheren Tools in dieser Sammlung und wurde von Anfang an zweisprachig (EN/DE) gebaut. Andere, später entstandene Tools auf dieser Seite nutzen stattdessen ein dreisprachiges (ZH/EN/DE) Konzept." }
+      ]
     }
   };
 
@@ -95,11 +121,31 @@
     return i18n[currentLang][key] || i18n.en[key] || key;
   }
 
+  const faqListEl = document.getElementById("faqList");
+  function renderFAQ() {
+    if (!faqListEl) return;
+    const faq = (i18n[currentLang] && i18n[currentLang].faq) || [];
+    faqListEl.innerHTML = "";
+    faq.forEach((item) => {
+      const details = document.createElement("details");
+      details.className = "faq-item";
+      const summary = document.createElement("summary");
+      summary.innerHTML = '<span class="chev">▶</span> <span>' + item.q + "</span>";
+      const body = document.createElement("div");
+      body.className = "faq-a";
+      body.textContent = item.a;
+      details.appendChild(summary);
+      details.appendChild(body);
+      faqListEl.appendChild(details);
+    });
+  }
+
   function applyLanguage() {
     document.documentElement.lang = currentLang;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       el.textContent = t(el.getAttribute("data-i18n"));
     });
+    renderFAQ();
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
       el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
     });
