@@ -514,6 +514,21 @@ body {
 }
 .explain-section p:last-child { margin-bottom: 0; }
 
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+.scenario-card {
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--bg);
+  padding: 12px 14px;
+}
+.scenario-name { font-size: 0.85rem !important; font-weight: 700 !important; color: var(--text) !important; margin: 0 0 6px !important; }
+.scenario-body { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.55; margin: 0 !important; }
+
 .faq-list { margin-top: 4px; }
 .faq-item {
   border: 1px solid var(--card-border);
