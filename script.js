@@ -195,7 +195,7 @@
     }
   };
 
-  let currentLang = "en";
+  let currentLang = "de";
   try {
     const saved = localStorage.getItem(LANG_KEY);
     if (saved && i18n[saved]) {
