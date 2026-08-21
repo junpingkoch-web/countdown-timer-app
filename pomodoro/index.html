@@ -115,9 +115,12 @@
     <h2 style="text-align:center; margin: 4px 0 2px;" data-i18n="heroTitle">Free Online Pomodoro Timer</h2>
     <p class="hero-lead" data-i18n="heroLead">A 25-minute focus round is already counting down — when it ends, a 5-minute break starts automatically.</p>
 
-    <section class="card timer-card">
-      <div class="timer-display" id="timerDisplay">25:00</div>
-      <p class="timer-status" id="timerStatus"></p>
+    <section class="card">
+      <div class="time-grid" id="pomodoroGrid">
+        <div class="time-unit"><div class="value" data-unit="m">25</div><div class="label" data-i18n="minutesLabel">Min</div></div>
+        <div class="time-unit"><div class="value" data-unit="s">00</div><div class="label" data-i18n="secondsLabel">Sec</div></div>
+      </div>
+      <p class="timer-status" id="timerStatus" style="text-align:center; margin-top:12px;"></p>
     </section>
 
     <div class="cta-banner">
@@ -178,6 +181,7 @@
         brandLabel: "倒计时工作室",
         heroTitle: "免费在线番茄钟",
         heroLead: "一轮 25 分钟的专注倒计时已经在运行——结束后会自动开始 5 分钟休息。",
+        minutesLabel: "分", secondsLabel: "秒",
         phaseFocusLabel: "专注中", phaseBreakLabel: "休息中", timerDone: "时间到！",
         adLabel: "广告",
         ctaBanner: "需要针对具体日期倒计时？比如生日、发布日或考试？",
@@ -200,6 +204,7 @@
         brandLabel: "Countdown Studio",
         heroTitle: "Free Online Pomodoro Timer",
         heroLead: "A 25-minute focus round is already counting down — when it ends, a 5-minute break starts automatically.",
+        minutesLabel: "Min", secondsLabel: "Sec",
         phaseFocusLabel: "Focus", phaseBreakLabel: "Break", timerDone: "Time's up!",
         adLabel: "Advertisement",
         ctaBanner: "Need to count down to a specific date instead — a birthday, a launch, an exam?",
@@ -222,6 +227,7 @@
         brandLabel: "Countdown Studio",
         heroTitle: "Kostenloser Online-Pomodoro-Timer",
         heroLead: "Eine 25-Minuten-Fokusrunde läuft bereits — danach startet automatisch eine 5-Minuten-Pause.",
+        minutesLabel: "Min", secondsLabel: "Sek",
         phaseFocusLabel: "Fokus", phaseBreakLabel: "Pause", timerDone: "Zeit abgelaufen!",
         adLabel: "Anzeige",
         ctaBanner: "Möchtest du stattdessen zu einem bestimmten Datum zählen — Geburtstag, Launch, Prüfung?",
@@ -297,7 +303,7 @@
     });
 
     // ---------- Timer (auto-running 25/5 preview loop, no controls) ----------
-    var timerDisplay = document.getElementById("timerDisplay");
+    var pomodoroGrid = document.getElementById("pomodoroGrid");
     var timerStatus = document.getElementById("timerStatus");
 
     var PHASE_FOCUS_SECONDS = 25 * 60;
@@ -306,11 +312,11 @@
     var timerRemaining = PHASE_FOCUS_SECONDS;
     var timerHandle = null;
 
-    function formatTimer(sec) {
-      var m = Math.floor(sec / 60), s = sec % 60;
-      return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    function renderTimerDisplay() {
+      var m = Math.floor(timerRemaining / 60), s = timerRemaining % 60;
+      pomodoroGrid.querySelector('[data-unit="m"]').textContent = String(m).padStart(2, "0");
+      pomodoroGrid.querySelector('[data-unit="s"]').textContent = String(s).padStart(2, "0");
     }
-    function renderTimerDisplay() { timerDisplay.textContent = formatTimer(timerRemaining); }
     function renderPhaseLabel() { timerStatus.textContent = t(onBreak ? "phaseBreakLabel" : "phaseFocusLabel"); }
 
     function tick() {
