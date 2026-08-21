@@ -35,13 +35,13 @@
     },
     {
       "@type": "Question",
-      "name": "Can I change the 25/5 split to a different duration?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set any minutes and seconds you like before pressing Start — 25/5 is just the classic Pomodoro default." }
+      "name": "Can I change the 25/5 timing on this page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not here — this preview is a fixed 25-minute focus / 5-minute break loop that runs automatically. Open the full Countdown Studio for a version with your own duration and manual Start/Pause/Reset controls." }
     },
     {
       "@type": "Question",
       "name": "Does my timer keep running if I switch tabs or reload the page?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It keeps counting while the tab stays open in the background, but reloading the page resets it to your last-entered duration — progress isn't saved." }
+      "acceptedAnswer": { "@type": "Answer", "text": "It keeps counting while the tab stays open in the background. Reloading the page restarts the 25/5 loop from the beginning of a focus round — there's no custom progress to lose since it's always the same fixed cycle." }
     }
   ]
 }
@@ -113,27 +113,10 @@
     </div>
 
     <h2 style="text-align:center; margin: 4px 0 2px;" data-i18n="heroTitle">Free Online Pomodoro Timer</h2>
-    <p class="hero-lead" data-i18n="heroLead">25 minutes of focus, 5 minutes of rest. No sign-up, no app — just press Start.</p>
+    <p class="hero-lead" data-i18n="heroLead">A 25-minute focus round is already counting down — when it ends, a 5-minute break starts automatically.</p>
 
     <section class="card timer-card">
       <div class="timer-display" id="timerDisplay">25:00</div>
-
-      <div class="timer-inputs" id="timerInputs">
-        <div class="field small">
-          <label for="timerMinutes" data-i18n="minutesLabel">Minutes</label>
-          <input type="number" id="timerMinutes" min="0" max="180" value="25">
-        </div>
-        <div class="field small">
-          <label for="timerSeconds" data-i18n="secondsLabel">Seconds</label>
-          <input type="number" id="timerSeconds" min="0" max="59" value="0">
-        </div>
-      </div>
-
-      <div class="timer-controls">
-        <button id="timerStart" class="btn btn-primary" type="button" data-i18n="startBtn">Start</button>
-        <button id="timerPause" class="btn btn-secondary" type="button" data-i18n="pauseBtn" disabled>Pause</button>
-        <button id="timerReset" class="btn btn-secondary" type="button" data-i18n="resetBtn">Reset</button>
-      </div>
       <p class="timer-status" id="timerStatus"></p>
     </section>
 
@@ -152,8 +135,8 @@
       <p data-i18n="whatP2">The idea is simple: a visible, ticking countdown makes a work session feel like a short sprint instead of an open-ended slog, which makes it easier to start and easier to resist checking your phone until the timer runs out.</p>
 
       <h2 data-i18n="howTitle">How to use this timer</h2>
-      <p data-i18n="howP1">Leave it on the default 25:00, or set your own minutes and seconds, then press Start. Use Pause if you're interrupted — it won't lose your remaining time — and Reset whenever you want to go back to your chosen duration.</p>
-      <p data-i18n="howP2">Everything runs locally in your browser: there's no account, no installation, and nothing is sent to a server. The only thing to keep in mind is that the countdown doesn't save its progress if you reload the page, and it only shows an on-screen banner when time is up — no sound, no system notification.</p>
+      <p data-i18n="howP1">This preview runs the classic 25/5 cycle automatically — a 25-minute focus round, then a 5-minute break, on repeat. There's nothing to press.</p>
+      <p data-i18n="howP2">For a version with your own duration and manual Start/Pause/Reset control, open the full Countdown Studio using the button above — it also runs locally in your browser with no account and nothing sent to a server.</p>
 
       <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
       <div class="faq-list" id="faqList"></div>
@@ -194,10 +177,8 @@
       zh: {
         brandLabel: "倒计时工作室",
         heroTitle: "免费在线番茄钟",
-        heroLead: "专注 25 分钟，休息 5 分钟。无需注册，无需安装 App —— 直接点击开始。",
-        minutesLabel: "分钟", secondsLabel: "秒数",
-        startBtn: "开始", pauseBtn: "暂停", resumeBtn: "继续", resetBtn: "重置",
-        timerRunning: "计时中…", timerPaused: "已暂停", timerDone: "时间到！",
+        heroLead: "一轮 25 分钟的专注倒计时已经在运行——结束后会自动开始 5 分钟休息。",
+        phaseFocusLabel: "专注中", phaseBreakLabel: "休息中", timerDone: "时间到！",
         adLabel: "广告",
         ctaBanner: "需要针对具体日期倒计时？比如生日、发布日或考试？",
         ctaButtonLabel: "打开倒计时工作室",
@@ -205,23 +186,21 @@
         whatP1: "番茄工作法是一种基于短时间专注冲刺的时间管理方法。你先专注工作一段固定时长——传统上是 25 分钟——然后休息一小段时间，通常是 5 分钟，再开始下一轮。完成四轮后，安排一次较长的休息。",
         whatP2: "核心思路很简单：一个不断跳动的可视化倒计时，能把一段工作时间变成一次短跑冲刺，而不是没有尽头的苦役——这让人更容易开始，也更容易在计时结束前不去看手机。",
         howTitle: "怎么使用这个计时器",
-        howP1: "保持默认的 25:00，或者自行设置分钟和秒数，然后点击「开始」。如果被打断，用「暂停」不会丢失剩余时间；随时点击「重置」可以回到你设定的时长。",
-        howP2: "一切都在你的浏览器本地运行：没有账号、无需安装，也不会向任何服务器发送数据。唯一需要注意的是，刷新页面不会保留倒计时进度，而且时间到只会显示页内提示横幅——没有声音，也没有系统通知。",
+        howP1: "这个预览会自动按经典的 25/5 循环运行——25 分钟专注，然后 5 分钟休息，循环往复。不需要点击任何按钮。",
+        howP2: "如果想自定义时长、并手动控制开始/暂停/重置，请点击上方按钮打开完整版倒计时工作室——同样完全在你的浏览器本地运行，无需账号，也不会发送任何数据。",
         faqTitle: "常见问题",
         faq: [
           { q: "这个番茄钟真的完全免费、无需注册吗？", a: "是的。没有账号系统，无需安装，也不需要付费——它完全在你的浏览器里运行，这里的任何操作都不会发送到服务器。" },
           { q: "时间到了会有声音提示吗？", a: "不会。时间到时页面会显示一个提示横幅，但没有声音闹铃或系统推送通知，所以请让这个标签页保持打开并可见。" },
-          { q: "可以把 25/5 的时长改成别的吗？", a: "可以。点击「开始」之前，你可以设置任意的分钟和秒数——25/5 只是番茄工作法的经典默认值。" },
-          { q: "切换标签页或刷新页面，计时还会继续吗？", a: "只要标签页保持在后台打开，计时就会继续；但刷新页面会把它重置为你最后设置的时长——进度不会被保存。" }
+          { q: "可以在这个页面修改 25/5 的时长吗？", a: "在这个页面不行——这个预览是一个固定的、自动运行的 25 分钟专注 / 5 分钟休息循环。点击上方按钮打开完整版倒计时工作室，可以自定义时长并手动控制开始/暂停/重置。" },
+          { q: "切换标签页或刷新页面，计时还会继续吗？", a: "只要标签页保持在后台打开，计时就会继续。刷新页面会让 25/5 循环重新从一轮专注的开头开始——因为这始终是同一个固定循环，没有需要保留的自定义进度。" }
         ]
       },
       en: {
         brandLabel: "Countdown Studio",
         heroTitle: "Free Online Pomodoro Timer",
-        heroLead: "25 minutes of focus, 5 minutes of rest. No sign-up, no app — just press Start.",
-        minutesLabel: "Minutes", secondsLabel: "Seconds",
-        startBtn: "Start", pauseBtn: "Pause", resumeBtn: "Resume", resetBtn: "Reset",
-        timerRunning: "Timer running…", timerPaused: "Paused", timerDone: "Time's up!",
+        heroLead: "A 25-minute focus round is already counting down — when it ends, a 5-minute break starts automatically.",
+        phaseFocusLabel: "Focus", phaseBreakLabel: "Break", timerDone: "Time's up!",
         adLabel: "Advertisement",
         ctaBanner: "Need to count down to a specific date instead — a birthday, a launch, an exam?",
         ctaButtonLabel: "Open Countdown Studio",
@@ -229,38 +208,36 @@
         whatP1: "The Pomodoro Technique is a time-management method built around short, focused work sprints. You work for a fixed stretch — traditionally 25 minutes — then take a short break, typically 5 minutes, before starting the next round. After four rounds, you take a longer break.",
         whatP2: "The idea is simple: a visible, ticking countdown makes a work session feel like a short sprint instead of an open-ended slog, which makes it easier to start and easier to resist checking your phone until the timer runs out.",
         howTitle: "How to use this timer",
-        howP1: "Leave it on the default 25:00, or set your own minutes and seconds, then press Start. Use Pause if you're interrupted — it won't lose your remaining time — and Reset whenever you want to go back to your chosen duration.",
-        howP2: "Everything runs locally in your browser: there's no account, no installation, and nothing is sent to a server. The only thing to keep in mind is that the countdown doesn't save its progress if you reload the page, and it only shows an on-screen banner when time is up — no sound, no system notification.",
+        howP1: "This preview runs the classic 25/5 cycle automatically — a 25-minute focus round, then a 5-minute break, on repeat. There's nothing to press.",
+        howP2: "For a version with your own duration and manual Start/Pause/Reset control, open the full Countdown Studio using the button above — it also runs locally in your browser with no account and nothing sent to a server.",
         faqTitle: "Frequently Asked Questions",
         faq: [
           { q: "Is this Pomodoro timer really free, with no sign-up?", a: "Yes. There's no account, no installation, and no payment — it runs entirely in your browser and nothing you do here is sent to a server." },
           { q: "Does it make a sound when the session ends?", a: "No. It shows an on-screen banner when time is up, but there's no audio alarm or push notification, so keep the tab open and visible." },
-          { q: "Can I change the 25/5 split to a different duration?", a: "Yes. Set any minutes and seconds you like before pressing Start — 25/5 is just the classic Pomodoro default." },
-          { q: "Does my timer keep running if I switch tabs or reload the page?", a: "It keeps counting while the tab stays open in the background, but reloading the page resets it to your last-entered duration — progress isn't saved." }
+          { q: "Can I change the 25/5 timing on this page?", a: "Not here — this preview is a fixed 25-minute focus / 5-minute break loop that runs automatically. Open the full Countdown Studio (button above) for a version with your own duration and manual Start/Pause/Reset controls." },
+          { q: "Does my timer keep running if I switch tabs or reload the page?", a: "It keeps counting while the tab stays open in the background. Reloading the page restarts the 25/5 loop from the beginning of a focus round — there's no custom progress to lose since it's always the same fixed cycle." }
         ]
       },
       de: {
         brandLabel: "Countdown Studio",
         heroTitle: "Kostenloser Online-Pomodoro-Timer",
-        heroLead: "25 Minuten Fokus, 5 Minuten Pause. Keine Anmeldung, keine App — einfach Start drücken.",
-        minutesLabel: "Minuten", secondsLabel: "Sekunden",
-        startBtn: "Start", pauseBtn: "Pause", resumeBtn: "Fortsetzen", resetBtn: "Zurücksetzen",
-        timerRunning: "Timer läuft…", timerPaused: "Pausiert", timerDone: "Zeit abgelaufen!",
+        heroLead: "Eine 25-Minuten-Fokusrunde läuft bereits — danach startet automatisch eine 5-Minuten-Pause.",
+        phaseFocusLabel: "Fokus", phaseBreakLabel: "Pause", timerDone: "Zeit abgelaufen!",
         adLabel: "Anzeige",
         ctaBanner: "Möchtest du stattdessen zu einem bestimmten Datum zählen — Geburtstag, Launch, Prüfung?",
         ctaButtonLabel: "Countdown Studio öffnen",
         whatTitle: "Was ist die Pomodoro-Technik?",
         whatP1: "Die Pomodoro-Technik ist eine Zeitmanagement-Methode, die auf kurzen, fokussierten Arbeitssprints basiert. Du arbeitest für eine feste Dauer — klassischerweise 25 Minuten — und machst dann eine kurze Pause, meist 5 Minuten, bevor die nächste Runde beginnt. Nach vier Runden folgt eine längere Pause.",
         whatP2: "Die Idee ist einfach: Ein sichtbarer, tickender Countdown macht eine Arbeitsphase zu einem kurzen Sprint statt zu einer endlosen Aufgabe — das erleichtert den Start und macht es leichter, bis zum Ablauf des Timers nicht zum Handy zu greifen.",
-        howTitle: "So benutzt du diesen Timer",
-        howP1: "Lass es auf den Standardwert von 25:00, oder stelle deine eigenen Minuten und Sekunden ein, und drücke dann Start. Nutze Pause, falls du unterbrochen wirst — die verbleibende Zeit geht dabei nicht verloren — und Zurücksetzen, wann immer du zu deiner gewählten Dauer zurückkehren möchtest.",
-        howP2: "Alles läuft lokal in deinem Browser: kein Konto, keine Installation, nichts wird an einen Server gesendet. Zu beachten ist nur, dass der Countdown seinen Fortschritt beim Neuladen der Seite nicht speichert und bei Ablauf lediglich ein Banner auf der Seite zeigt — kein Ton, keine Systembenachrichtigung.",
+        howTitle: "So funktioniert dieser Timer",
+        howP1: "Diese Vorschau läuft automatisch im klassischen 25/5-Zyklus — 25 Minuten Fokus, dann 5 Minuten Pause, im Kreislauf. Es gibt nichts zu drücken.",
+        howP2: "Für eine Version mit eigener Dauer sowie manueller Start/Pause/Zurücksetzen-Steuerung öffne das vollständige Countdown Studio über den Button oben — auch das läuft lokal in deinem Browser, ohne Konto und ohne Datenübertragung.",
         faqTitle: "Häufig gestellte Fragen",
         faq: [
           { q: "Ist dieser Pomodoro-Timer wirklich kostenlos, ohne Anmeldung?", a: "Ja. Es gibt kein Konto, keine Installation und keine Zahlung — er läuft vollständig in deinem Browser, und nichts wird an einen Server gesendet." },
           { q: "Gibt es einen Ton, wenn die Sitzung endet?", a: "Nein. Bei Ablauf erscheint ein Banner auf der Seite, aber es gibt keinen Alarmton und keine Push-Benachrichtigung — halte den Tab also geöffnet und sichtbar." },
-          { q: "Kann ich die 25/5-Aufteilung auf eine andere Dauer ändern?", a: "Ja. Stelle vor dem Drücken von Start beliebige Minuten und Sekunden ein — 25/5 ist nur der klassische Pomodoro-Standard." },
-          { q: "Läuft der Timer weiter, wenn ich den Tab wechsle oder die Seite neu lade?", a: "Er läuft weiter, solange der Tab im Hintergrund geöffnet bleibt; ein Neuladen der Seite setzt ihn jedoch auf deine zuletzt eingegebene Dauer zurück — der Fortschritt wird nicht gespeichert." }
+          { q: "Kann ich den 25/5-Rhythmus auf dieser Seite ändern?", a: "Hier nicht — diese Vorschau ist ein fester, automatisch laufender 25-Minuten-Fokus/5-Minuten-Pause-Zyklus. Öffne das vollständige Countdown Studio (Button oben) für eine Version mit eigener Dauer und manueller Steuerung." },
+          { q: "Läuft der Timer weiter, wenn ich den Tab wechsle oder die Seite neu lade?", a: "Er läuft weiter, solange der Tab im Hintergrund geöffnet bleibt. Ein Neuladen der Seite startet den 25/5-Zyklus wieder am Anfang einer Fokusrunde — es gibt keinen eigenen Fortschritt zu verlieren, da es immer derselbe feste Zyklus ist." }
         ]
       }
     };
@@ -308,7 +285,7 @@
       document.querySelectorAll(".lang-switch .lang-btn").forEach(function (btn) {
         btn.classList.toggle("active", btn.dataset.lang === currentLang);
       });
-      updateTimerStatusText();
+      renderPhaseLabel();
     }
 
     document.querySelectorAll(".lang-switch .lang-btn").forEach(function (btn) {
@@ -319,103 +296,46 @@
       });
     });
 
-    // ---------- Timer ----------
+    // ---------- Timer (auto-running 25/5 preview loop, no controls) ----------
     var timerDisplay = document.getElementById("timerDisplay");
-    var timerMinutesInput = document.getElementById("timerMinutes");
-    var timerSecondsInput = document.getElementById("timerSeconds");
-    var timerStart = document.getElementById("timerStart");
-    var timerPause = document.getElementById("timerPause");
-    var timerReset = document.getElementById("timerReset");
     var timerStatus = document.getElementById("timerStatus");
 
-    var timerTotalSeconds = 25 * 60;
-    var timerRemaining = timerTotalSeconds;
+    var PHASE_FOCUS_SECONDS = 25 * 60;
+    var PHASE_BREAK_SECONDS = 5 * 60;
+    var onBreak = false;
+    var timerRemaining = PHASE_FOCUS_SECONDS;
     var timerHandle = null;
-    var timerState = "idle";
 
     function formatTimer(sec) {
       var m = Math.floor(sec / 60), s = sec % 60;
       return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
     }
     function renderTimerDisplay() { timerDisplay.textContent = formatTimer(timerRemaining); }
-    function updateTimerStatusText() {
-      if (timerState === "running") timerStatus.textContent = t("timerRunning");
-      else if (timerState === "paused") timerStatus.textContent = t("timerPaused");
-      else if (timerState === "done") timerStatus.textContent = t("timerDone");
-      else timerStatus.textContent = "";
-    }
-    function setInputsDisabled(disabled) {
-      timerMinutesInput.disabled = disabled;
-      timerSecondsInput.disabled = disabled;
-    }
+    function renderPhaseLabel() { timerStatus.textContent = t(onBreak ? "phaseBreakLabel" : "phaseFocusLabel"); }
+
     function tick() {
       timerRemaining -= 1;
       if (timerRemaining <= 0) {
         timerRemaining = 0;
         renderTimerDisplay();
+        timerStatus.textContent = t("timerDone");
         clearInterval(timerHandle);
-        timerState = "done";
-        timerStart.disabled = false;
-        timerPause.disabled = true;
-        setInputsDisabled(false);
-        updateTimerStatusText();
+        setTimeout(function () {
+          onBreak = !onBreak;
+          timerRemaining = onBreak ? PHASE_BREAK_SECONDS : PHASE_FOCUS_SECONDS;
+          renderTimerDisplay();
+          renderPhaseLabel();
+          timerHandle = setInterval(tick, 1000);
+        }, 2500);
         return;
       }
       renderTimerDisplay();
     }
 
-    timerStart.addEventListener("click", function () {
-      if (timerState === "idle" || timerState === "done") {
-        var mins = Math.max(0, parseInt(timerMinutesInput.value, 10) || 0);
-        var secs = Math.max(0, Math.min(59, parseInt(timerSecondsInput.value, 10) || 0));
-        timerTotalSeconds = mins * 60 + secs;
-        if (timerTotalSeconds <= 0) return;
-        timerRemaining = timerTotalSeconds;
-      }
-      timerState = "running";
-      setInputsDisabled(true);
-      timerStart.disabled = true;
-      timerPause.disabled = false;
-      timerPause.textContent = t("pauseBtn");
-      updateTimerStatusText();
-      renderTimerDisplay();
-      clearInterval(timerHandle);
-      timerHandle = setInterval(tick, 1000);
-    });
-
-    timerPause.addEventListener("click", function () {
-      if (timerState === "running") {
-        clearInterval(timerHandle);
-        timerState = "paused";
-        timerPause.textContent = t("resumeBtn");
-        timerStart.disabled = false;
-        updateTimerStatusText();
-      } else if (timerState === "paused") {
-        timerState = "running";
-        timerPause.textContent = t("pauseBtn");
-        timerStart.disabled = true;
-        updateTimerStatusText();
-        timerHandle = setInterval(tick, 1000);
-      }
-    });
-
-    timerReset.addEventListener("click", function () {
-      clearInterval(timerHandle);
-      timerState = "idle";
-      var mins = Math.max(0, parseInt(timerMinutesInput.value, 10) || 0);
-      var secs = Math.max(0, Math.min(59, parseInt(timerSecondsInput.value, 10) || 0));
-      timerTotalSeconds = mins * 60 + secs;
-      timerRemaining = timerTotalSeconds;
-      setInputsDisabled(false);
-      timerStart.disabled = false;
-      timerPause.disabled = true;
-      timerPause.textContent = t("pauseBtn");
-      updateTimerStatusText();
-      renderTimerDisplay();
-    });
-
     applyLanguage();
     renderTimerDisplay();
+    renderPhaseLabel();
+    timerHandle = setInterval(tick, 1000);
   })();
   </script>
 </body>
