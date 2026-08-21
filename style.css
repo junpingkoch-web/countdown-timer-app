@@ -630,7 +630,9 @@ footer.disclaimer {
 .cta-banner p { margin: 0; }
 
 .cta-link-3d {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 26px;
   border-radius: 999px;
   border: none;
