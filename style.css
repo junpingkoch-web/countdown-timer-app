@@ -602,3 +602,26 @@ footer.disclaimer {
   .support-fab span:not([aria-hidden]) { display: none; }
   .support-fab { padding: 12px; }
 }
+
+/* Long-tail landing pages (pomodoro/, christmas-countdown/, etc.) */
+.hero-lead {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: -8px 0 20px;
+  line-height: 1.5;
+}
+
+.cta-banner {
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 24px 0;
+}
+
+.cta-banner a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.cta-banner a:hover { text-decoration: underline; }

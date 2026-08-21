@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Pomodoro Timer – Silent 25/5 Focus Countdown | Countdown Studio</title>
+<meta name="description" content="A free, silent online Pomodoro timer. No sign-up, no app install — set 25 minutes of focus and 5 minutes of rest, right in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://junpingkoch-web.github.io/countdown-timer-app/pomodoro/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B3%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Online Pomodoro Timer – Silent 25/5 Focus Countdown">
+<meta property="og:description" content="A free, silent online Pomodoro timer. No sign-up, no app install — set 25 minutes of focus and 5 minutes of rest, right in your browser.">
+<meta property="og:url" content="https://junpingkoch-web.github.io/countdown-timer-app/pomodoro/">
+<meta property="og:image" content="https://junpingkoch-web.github.io/images/countdown-vintage-clock.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Online Pomodoro Timer – Silent 25/5 Focus Countdown">
+<meta name="twitter:description" content="A free, silent online Pomodoro timer. No sign-up, no app install — set 25 minutes of focus and 5 minutes of rest, right in your browser.">
+<link rel="stylesheet" href="../style.css">
+<!-- Structured data: FAQPage (English defaults; keep in sync with the "en" faq array below) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this Pomodoro timer really free, with no sign-up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no account, no installation, and no payment — it runs entirely in your browser and nothing you do here is sent to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it make a sound when the session ends?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It shows an on-screen banner when time is up, but there's no audio alarm or push notification, so keep the tab open and visible." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the 25/5 split to a different duration?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set any minutes and seconds you like before pressing Start — 25/5 is just the classic Pomodoro default." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my timer keep running if I switch tabs or reload the page?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It keeps counting while the tab stays open in the background, but reloading the page resets it to your last-entered duration — progress isn't saved." }
+    }
+  ]
+}
+</script>
+<!-- Structured data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Countdown Studio – Pomodoro Timer",
+  "url": "https://junpingkoch-web.github.io/countdown-timer-app/pomodoro/",
+  "description": "A free, silent online Pomodoro timer for focus sessions and breaks, running entirely in the browser with no account or installation.",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": ["zh", "en", "de"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied',
+    'analytics_storage': 'denied', 'wait_for_update': 500
+  });
+  (function(){
+    var KEY='cookieConsent', saved=localStorage.getItem(KEY);
+    function apply(g){ gtag('consent','update',{ad_storage:g?'granted':'denied',ad_user_data:g?'granted':'denied',ad_personalization:g?'granted':'denied',analytics_storage:g?'granted':'denied'}); }
+    if (saved==='granted') { apply(true); }
+    else if (saved!=='denied') {
+      document.addEventListener('DOMContentLoaded', function(){
+        var b=document.createElement('div');
+        b.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#20242e;color:#eef1f6;padding:14px 18px;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 -2px 12px rgba(0,0,0,.25);';
+        b.innerHTML='<span style="flex:1;min-width:240px;">This site uses cookies for analytics and to show ads. · Diese Website nutzt Cookies für Statistik und Werbung.</span><span style="display:flex;gap:8px;flex-shrink:0;"><button id="cc-reject" style="background:transparent;border:1px solid #5c6472;color:#eef1f6;padding:8px 14px;border-radius:6px;cursor:pointer;">Essential only · Nur essenziell</button><button id="cc-accept" style="background:#2f6fed;border:none;color:#fff;padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:600;">Accept · Akzeptieren</button></span>';
+        document.body.appendChild(b);
+        document.getElementById('cc-accept').onclick=function(){ localStorage.setItem(KEY,'granted'); apply(true); b.remove(); };
+        document.getElementById('cc-reject').onclick=function(){ localStorage.setItem(KEY,'denied'); b.remove(); };
+      });
+    }
+  })();
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4830421367394194" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7LZZQ43QD6"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-7LZZQ43QD6');
+</script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title" style="font-size:1.05rem;">
+        <span class="title-icon" aria-hidden="true">🍅</span>
+        <span class="title-text" data-i18n="brandLabel">Countdown Studio</span>
+        <span class="title-icon" aria-hidden="true">⏳</span>
+      </h1>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="zh" type="button">中文</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn active" data-lang="de" type="button">DE</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4830421367394194" data-ad-slot="9009627872" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2 style="text-align:center; margin: 4px 0 2px;" data-i18n="heroTitle">Free Online Pomodoro Timer</h2>
+    <p class="hero-lead" data-i18n="heroLead">25 minutes of focus, 5 minutes of rest. No sign-up, no app — just press Start.</p>
+
+    <section class="card timer-card">
+      <div class="timer-display" id="timerDisplay">25:00</div>
+
+      <div class="timer-inputs" id="timerInputs">
+        <div class="field small">
+          <label for="timerMinutes" data-i18n="minutesLabel">Minutes</label>
+          <input type="number" id="timerMinutes" min="0" max="180" value="25">
+        </div>
+        <div class="field small">
+          <label for="timerSeconds" data-i18n="secondsLabel">Seconds</label>
+          <input type="number" id="timerSeconds" min="0" max="59" value="0">
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <button id="timerStart" class="btn btn-primary" type="button" data-i18n="startBtn">Start</button>
+        <button id="timerPause" class="btn btn-secondary" type="button" data-i18n="pauseBtn" disabled>Pause</button>
+        <button id="timerReset" class="btn btn-secondary" type="button" data-i18n="resetBtn">Reset</button>
+      </div>
+      <p class="timer-status" id="timerStatus"></p>
+    </section>
+
+    <div class="cta-banner" data-i18n-html="ctaBanner">
+      Need to count down to a specific date instead — a birthday, a launch, an exam? Try the full <a href="../">Countdown Studio</a>.
+    </div>
+
+    <div class="ad-slot in-content">
+      <div class="ad-box" data-i18n="adLabel">Advertisement</div>
+    </div>
+
+    <section class="explain-section">
+      <h2 data-i18n="whatTitle">What is the Pomodoro Technique?</h2>
+      <p data-i18n="whatP1">The Pomodoro Technique is a time-management method built around short, focused work sprints. You work for a fixed stretch — traditionally 25 minutes — then take a short break, typically 5 minutes, before starting the next round. After four rounds, you take a longer break.</p>
+      <p data-i18n="whatP2">The idea is simple: a visible, ticking countdown makes a work session feel like a short sprint instead of an open-ended slog, which makes it easier to start and easier to resist checking your phone until the timer runs out.</p>
+
+      <h2 data-i18n="howTitle">How to use this timer</h2>
+      <p data-i18n="howP1">Leave it on the default 25:00, or set your own minutes and seconds, then press Start. Use Pause if you're interrupted — it won't lose your remaining time — and Reset whenever you want to go back to your chosen duration.</p>
+      <p data-i18n="howP2">Everything runs locally in your browser: there's no account, no installation, and nothing is sent to a server. The only thing to keep in mind is that the countdown doesn't save its progress if you reload the page, and it only shows an on-screen banner when time is up — no sound, no system notification.</p>
+
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
+    <div class="ad-slot">
+      <div class="ad-box" data-i18n="adLabel">Advertisement</div>
+    </div>
+
+    <footer class="disclaimer">
+      <nav class="footer-links">
+        <a href="https://junpingkoch-web.github.io/" target="_blank" rel="noopener">All tools</a>
+        <a href="https://junpingkoch-web.github.io/about.html" target="_blank" rel="noopener">About</a>
+        <a href="https://junpingkoch-web.github.io/contact.html" target="_blank" rel="noopener">Contact</a>
+        <a href="https://junpingkoch-web.github.io/privacy.html" target="_blank" rel="noopener">Privacy</a>
+        <a href="https://junpingkoch-web.github.io/terms.html" target="_blank" rel="noopener">Terms</a>
+      </nav>
+    </footer>
+  </div>
+
+  <a
+    class="support-fab"
+    href="https://www.buymeacoffee.com/junping.koch"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Enjoyed this tool? Buy me a coffee"
+  >
+    <span aria-hidden="true">☕</span>
+    <span>Buy me a coffee</span>
+  </a>
+
+  <script>
+  (function () {
+    "use strict";
+    var LANG_KEY = "countdownStudio.lang";
+
+    var i18n = {
+      zh: {
+        brandLabel: "倒计时工作室",
+        heroTitle: "免费在线番茄钟",
+        heroLead: "专注 25 分钟，休息 5 分钟。无需注册，无需安装 App —— 直接点击开始。",
+        minutesLabel: "分钟", secondsLabel: "秒数",
+        startBtn: "开始", pauseBtn: "暂停", resumeBtn: "继续", resetBtn: "重置",
+        timerRunning: "计时中…", timerPaused: "已暂停", timerDone: "时间到！",
+        adLabel: "广告",
+        ctaBanner: '需要针对具体日期倒计时？比如生日、发布日或考试？试试完整版 <a href="../">倒计时工作室</a>。',
+        whatTitle: "什么是番茄工作法？",
+        whatP1: "番茄工作法是一种基于短时间专注冲刺的时间管理方法。你先专注工作一段固定时长——传统上是 25 分钟——然后休息一小段时间，通常是 5 分钟，再开始下一轮。完成四轮后，安排一次较长的休息。",
+        whatP2: "核心思路很简单：一个不断跳动的可视化倒计时，能把一段工作时间变成一次短跑冲刺，而不是没有尽头的苦役——这让人更容易开始，也更容易在计时结束前不去看手机。",
+        howTitle: "怎么使用这个计时器",
+        howP1: "保持默认的 25:00，或者自行设置分钟和秒数，然后点击「开始」。如果被打断，用「暂停」不会丢失剩余时间；随时点击「重置」可以回到你设定的时长。",
+        howP2: "一切都在你的浏览器本地运行：没有账号、无需安装，也不会向任何服务器发送数据。唯一需要注意的是，刷新页面不会保留倒计时进度，而且时间到只会显示页内提示横幅——没有声音，也没有系统通知。",
+        faqTitle: "常见问题",
+        faq: [
+          { q: "这个番茄钟真的完全免费、无需注册吗？", a: "是的。没有账号系统，无需安装，也不需要付费——它完全在你的浏览器里运行，这里的任何操作都不会发送到服务器。" },
+          { q: "时间到了会有声音提示吗？", a: "不会。时间到时页面会显示一个提示横幅，但没有声音闹铃或系统推送通知，所以请让这个标签页保持打开并可见。" },
+          { q: "可以把 25/5 的时长改成别的吗？", a: "可以。点击「开始」之前，你可以设置任意的分钟和秒数——25/5 只是番茄工作法的经典默认值。" },
+          { q: "切换标签页或刷新页面，计时还会继续吗？", a: "只要标签页保持在后台打开，计时就会继续；但刷新页面会把它重置为你最后设置的时长——进度不会被保存。" }
+        ]
+      },
+      en: {
+        brandLabel: "Countdown Studio",
+        heroTitle: "Free Online Pomodoro Timer",
+        heroLead: "25 minutes of focus, 5 minutes of rest. No sign-up, no app — just press Start.",
+        minutesLabel: "Minutes", secondsLabel: "Seconds",
+        startBtn: "Start", pauseBtn: "Pause", resumeBtn: "Resume", resetBtn: "Reset",
+        timerRunning: "Timer running…", timerPaused: "Paused", timerDone: "Time's up!",
+        adLabel: "Advertisement",
+        ctaBanner: 'Need to count down to a specific date instead — a birthday, a launch, an exam? Try the full <a href="../">Countdown Studio</a>.',
+        whatTitle: "What is the Pomodoro Technique?",
+        whatP1: "The Pomodoro Technique is a time-management method built around short, focused work sprints. You work for a fixed stretch — traditionally 25 minutes — then take a short break, typically 5 minutes, before starting the next round. After four rounds, you take a longer break.",
+        whatP2: "The idea is simple: a visible, ticking countdown makes a work session feel like a short sprint instead of an open-ended slog, which makes it easier to start and easier to resist checking your phone until the timer runs out.",
+        howTitle: "How to use this timer",
+        howP1: "Leave it on the default 25:00, or set your own minutes and seconds, then press Start. Use Pause if you're interrupted — it won't lose your remaining time — and Reset whenever you want to go back to your chosen duration.",
+        howP2: "Everything runs locally in your browser: there's no account, no installation, and nothing is sent to a server. The only thing to keep in mind is that the countdown doesn't save its progress if you reload the page, and it only shows an on-screen banner when time is up — no sound, no system notification.",
+        faqTitle: "Frequently Asked Questions",
+        faq: [
+          { q: "Is this Pomodoro timer really free, with no sign-up?", a: "Yes. There's no account, no installation, and no payment — it runs entirely in your browser and nothing you do here is sent to a server." },
+          { q: "Does it make a sound when the session ends?", a: "No. It shows an on-screen banner when time is up, but there's no audio alarm or push notification, so keep the tab open and visible." },
+          { q: "Can I change the 25/5 split to a different duration?", a: "Yes. Set any minutes and seconds you like before pressing Start — 25/5 is just the classic Pomodoro default." },
+          { q: "Does my timer keep running if I switch tabs or reload the page?", a: "It keeps counting while the tab stays open in the background, but reloading the page resets it to your last-entered duration — progress isn't saved." }
+        ]
+      },
+      de: {
+        brandLabel: "Countdown Studio",
+        heroTitle: "Kostenloser Online-Pomodoro-Timer",
+        heroLead: "25 Minuten Fokus, 5 Minuten Pause. Keine Anmeldung, keine App — einfach Start drücken.",
+        minutesLabel: "Minuten", secondsLabel: "Sekunden",
+        startBtn: "Start", pauseBtn: "Pause", resumeBtn: "Fortsetzen", resetBtn: "Zurücksetzen",
+        timerRunning: "Timer läuft…", timerPaused: "Pausiert", timerDone: "Zeit abgelaufen!",
+        adLabel: "Anzeige",
+        ctaBanner: 'Möchtest du stattdessen zu einem bestimmten Datum zählen — Geburtstag, Launch, Prüfung? Probier das vollständige <a href="../">Countdown Studio</a>.',
+        whatTitle: "Was ist die Pomodoro-Technik?",
+        whatP1: "Die Pomodoro-Technik ist eine Zeitmanagement-Methode, die auf kurzen, fokussierten Arbeitssprints basiert. Du arbeitest für eine feste Dauer — klassischerweise 25 Minuten — und machst dann eine kurze Pause, meist 5 Minuten, bevor die nächste Runde beginnt. Nach vier Runden folgt eine längere Pause.",
+        whatP2: "Die Idee ist einfach: Ein sichtbarer, tickender Countdown macht eine Arbeitsphase zu einem kurzen Sprint statt zu einer endlosen Aufgabe — das erleichtert den Start und macht es leichter, bis zum Ablauf des Timers nicht zum Handy zu greifen.",
+        howTitle: "So benutzt du diesen Timer",
+        howP1: "Lass es auf den Standardwert von 25:00, oder stelle deine eigenen Minuten und Sekunden ein, und drücke dann Start. Nutze Pause, falls du unterbrochen wirst — die verbleibende Zeit geht dabei nicht verloren — und Zurücksetzen, wann immer du zu deiner gewählten Dauer zurückkehren möchtest.",
+        howP2: "Alles läuft lokal in deinem Browser: kein Konto, keine Installation, nichts wird an einen Server gesendet. Zu beachten ist nur, dass der Countdown seinen Fortschritt beim Neuladen der Seite nicht speichert und bei Ablauf lediglich ein Banner auf der Seite zeigt — kein Ton, keine Systembenachrichtigung.",
+        faqTitle: "Häufig gestellte Fragen",
+        faq: [
+          { q: "Ist dieser Pomodoro-Timer wirklich kostenlos, ohne Anmeldung?", a: "Ja. Es gibt kein Konto, keine Installation und keine Zahlung — er läuft vollständig in deinem Browser, und nichts wird an einen Server gesendet." },
+          { q: "Gibt es einen Ton, wenn die Sitzung endet?", a: "Nein. Bei Ablauf erscheint ein Banner auf der Seite, aber es gibt keinen Alarmton und keine Push-Benachrichtigung — halte den Tab also geöffnet und sichtbar." },
+          { q: "Kann ich die 25/5-Aufteilung auf eine andere Dauer ändern?", a: "Ja. Stelle vor dem Drücken von Start beliebige Minuten und Sekunden ein — 25/5 ist nur der klassische Pomodoro-Standard." },
+          { q: "Läuft der Timer weiter, wenn ich den Tab wechsle oder die Seite neu lade?", a: "Er läuft weiter, solange der Tab im Hintergrund geöffnet bleibt; ein Neuladen der Seite setzt ihn jedoch auf deine zuletzt eingegebene Dauer zurück — der Fortschritt wird nicht gespeichert." }
+        ]
+      }
+    };
+
+    var currentLang = "de";
+    try {
+      var saved = localStorage.getItem(LANG_KEY);
+      if (saved && i18n[saved]) { currentLang = saved; }
+      else {
+        var nav = (navigator.language || "en").toLowerCase();
+        if (nav.indexOf("zh") === 0) currentLang = "zh";
+        else if (nav.indexOf("de") === 0) currentLang = "de";
+      }
+    } catch (e) {}
+
+    function t(key) { return i18n[currentLang][key] || i18n.en[key] || key; }
+
+    var faqListEl = document.getElementById("faqList");
+    function renderFAQ() {
+      var faq = (i18n[currentLang] && i18n[currentLang].faq) || [];
+      faqListEl.innerHTML = "";
+      faq.forEach(function (item) {
+        var details = document.createElement("details");
+        details.className = "faq-item";
+        var summary = document.createElement("summary");
+        summary.innerHTML = '<span class="chev">▶</span> <span>' + item.q + "</span>";
+        var body = document.createElement("div");
+        body.className = "faq-a";
+        body.textContent = item.a;
+        details.appendChild(summary);
+        details.appendChild(body);
+        faqListEl.appendChild(details);
+      });
+    }
+
+    function applyLanguage() {
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        el.textContent = t(el.getAttribute("data-i18n"));
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+        el.innerHTML = t(el.getAttribute("data-i18n-html"));
+      });
+      renderFAQ();
+      document.querySelectorAll(".lang-switch .lang-btn").forEach(function (btn) {
+        btn.classList.toggle("active", btn.dataset.lang === currentLang);
+      });
+      updateTimerStatusText();
+    }
+
+    document.querySelectorAll(".lang-switch .lang-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currentLang = btn.dataset.lang;
+        localStorage.setItem(LANG_KEY, currentLang);
+        applyLanguage();
+      });
+    });
+
+    // ---------- Timer ----------
+    var timerDisplay = document.getElementById("timerDisplay");
+    var timerMinutesInput = document.getElementById("timerMinutes");
+    var timerSecondsInput = document.getElementById("timerSeconds");
+    var timerStart = document.getElementById("timerStart");
+    var timerPause = document.getElementById("timerPause");
+    var timerReset = document.getElementById("timerReset");
+    var timerStatus = document.getElementById("timerStatus");
+
+    var timerTotalSeconds = 25 * 60;
+    var timerRemaining = timerTotalSeconds;
+    var timerHandle = null;
+    var timerState = "idle";
+
+    function formatTimer(sec) {
+      var m = Math.floor(sec / 60), s = sec % 60;
+      return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    }
+    function renderTimerDisplay() { timerDisplay.textContent = formatTimer(timerRemaining); }
+    function updateTimerStatusText() {
+      if (timerState === "running") timerStatus.textContent = t("timerRunning");
+      else if (timerState === "paused") timerStatus.textContent = t("timerPaused");
+      else if (timerState === "done") timerStatus.textContent = t("timerDone");
+      else timerStatus.textContent = "";
+    }
+    function setInputsDisabled(disabled) {
+      timerMinutesInput.disabled = disabled;
+      timerSecondsInput.disabled = disabled;
+    }
+    function tick() {
+      timerRemaining -= 1;
+      if (timerRemaining <= 0) {
+        timerRemaining = 0;
+        renderTimerDisplay();
+        clearInterval(timerHandle);
+        timerState = "done";
+        timerStart.disabled = false;
+        timerPause.disabled = true;
+        setInputsDisabled(false);
+        updateTimerStatusText();
+        return;
+      }
+      renderTimerDisplay();
+    }
+
+    timerStart.addEventListener("click", function () {
+      if (timerState === "idle" || timerState === "done") {
+        var mins = Math.max(0, parseInt(timerMinutesInput.value, 10) || 0);
+        var secs = Math.max(0, Math.min(59, parseInt(timerSecondsInput.value, 10) || 0));
+        timerTotalSeconds = mins * 60 + secs;
+        if (timerTotalSeconds <= 0) return;
+        timerRemaining = timerTotalSeconds;
+      }
+      timerState = "running";
+      setInputsDisabled(true);
+      timerStart.disabled = true;
+      timerPause.disabled = false;
+      timerPause.textContent = t("pauseBtn");
+      updateTimerStatusText();
+      renderTimerDisplay();
+      clearInterval(timerHandle);
+      timerHandle = setInterval(tick, 1000);
+    });
+
+    timerPause.addEventListener("click", function () {
+      if (timerState === "running") {
+        clearInterval(timerHandle);
+        timerState = "paused";
+        timerPause.textContent = t("resumeBtn");
+        timerStart.disabled = false;
+        updateTimerStatusText();
+      } else if (timerState === "paused") {
+        timerState = "running";
+        timerPause.textContent = t("pauseBtn");
+        timerStart.disabled = true;
+        updateTimerStatusText();
+        timerHandle = setInterval(tick, 1000);
+      }
+    });
+
+    timerReset.addEventListener("click", function () {
+      clearInterval(timerHandle);
+      timerState = "idle";
+      var mins = Math.max(0, parseInt(timerMinutesInput.value, 10) || 0);
+      var secs = Math.max(0, Math.min(59, parseInt(timerSecondsInput.value, 10) || 0));
+      timerTotalSeconds = mins * 60 + secs;
+      timerRemaining = timerTotalSeconds;
+      setInputsDisabled(false);
+      timerStart.disabled = false;
+      timerPause.disabled = true;
+      timerPause.textContent = t("pauseBtn");
+      updateTimerStatusText();
+      renderTimerDisplay();
+    });
+
+    applyLanguage();
+    renderTimerDisplay();
+  })();
+  </script>
+</body>
+</html>

@@ -1,9 +1,15 @@
 # Project: countdown-timer-app（Countdown Studio）
 
 零构建静态站，`index.html`/`style.css`/`script.js` 标准三件套（**没有** `data.js`——这个工具
-不需要预设数据集，纯用户输入驱动）。**双语 EN（默认）/DE，不是三语**——这是这个工具家族里少数
-UI 只支持两种语言的例外，别想当然加中文；引用它时（比如 portfolio 首页卡片标题）也该保持双语，
-不要强行凑三语。
+不需要预设数据集，纯用户输入驱动）。**更正（2026-08-21）：已经是三语 zh/en/de**，默认语言是 DE
+（`script.js` 里 `currentLang` 初始值 + 导航语言探测），中文是后加的，`i18n.zh` 字典完整存在——这条
+笔记之前写的"双语 EN/DE，不要加中文"已经过时，不要再照做。
+
+**长尾 SEO 落地页（2026-08-21 新增）：** `pomodoro/index.html`、`christmas-countdown/index.html` 作为
+独立子目录页面，走同样的零构建、三语、cookie-consent、ad-slot 约定，但**不引用共享的 `script.js`**——
+它们各自内嵌一份精简版的语言切换 + 倒计时逻辑（复用 `countdownStudio.lang` 这个 localStorage key
+保持语言偏好跨页面一致），因为 `script.js` 硬编码查询了首页专属的 DOM id（`dateForm`/`helpToggle` 等），
+直接引入会在这些页面报错。新增同类长尾页时复用这个模式，而不是尝试复用 `script.js` 本体。
 
 两种模式：从设定时长倒数的计时器，以及追踪生日/发布日等自定义日期事件的倒数日。
 
