@@ -332,6 +332,7 @@
     saveEvents(events);
     dateForm.reset();
     renderCountdowns();
+    if (typeof gtag === "function") gtag("event", "tool_result_generated", { tool_name: "countdown-timer-app" });
   });
 
   countdownList.addEventListener("click", (e) => {
@@ -465,6 +466,7 @@
       timerTotalSeconds = mins * 60 + secs;
       if (timerTotalSeconds <= 0) return;
       timerRemaining = timerTotalSeconds;
+      if (typeof gtag === "function") gtag("event", "tool_result_generated", { tool_name: "countdown-timer-app" });
     }
     timerState = "running";
     setInputsDisabled(true);
