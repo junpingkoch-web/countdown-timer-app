@@ -55,8 +55,8 @@
       guideB2: "日期倒计时用目标时刻减去当前时刻，把结果显示为整数天加上小时、分钟和秒，每秒刷新一次。它按精确的 24 小时为一天来计算，而不是按日历日期，所以如果现在到活动之间正好有夏令时切换，天数可能会和挂历上数出来的相差一小时。天数减少的时间点也是你设定的那个钟点，而不是午夜：设定为 09:00 的事件，每天早上 09:00 天数减一。只要精确到时间很重要，就请输入真实的时刻，而不只是日期。",
       guideS3: "其他时区的活动",
       guideB3: "工具按你设备自己的时区来读取目标日期和时间，并把它存成一个精确的时刻。这适合个人的截止日期；但如果是另一座城市的活动，比如苏黎世 15:00 开始的网络研讨会，请先算出那个时刻在你本地是几点，再输入。同一个工具集合里的“全球会议时区规划器（Zone Meet）”可以用可视化的方式完成换算，并且会自动处理夏令时。保存之后，即使你以后去了别的时区，倒计时仍然指向同一个时刻。",
-      guideS4: "计时器的准确性：为什么后台标签页会变慢",
-      guideB4: "计时器的工作方式是浏览器每触发一次一秒的定时事件就减去一秒，而不是和时钟对比。浏览器会降低隐藏或在后台的标签页里的定时器频率，有时甚至低到每分钟才触发一次，所以留在后台标签页里的计时器可能明显慢于真实时间。对于一次工作时段来说这通常无所谓，但如果需要精确计时，请让标签页保持可见，或者使用专门的设备计时器。日期倒计时没有这个问题，因为它每次都根据真实时钟重新计算。",
+      guideS4: "计时器的准确性：后台标签页也能走准",
+      guideB4: "计时器会记住它应该结束的那个时刻，并且每秒多次拿这个时刻和系统时钟比较，而不是每一秒数一次。浏览器会降低隐藏或后台标签页里的定时器频率，但因为剩余时间总是根据真实时钟重新计算，下一次触发或你回到这个标签页时，显示的时间就会立刻校正过来。暂停和继续会精确保留剩余时间。时间到了页面仍然只会显示一个页内提示横幅，所以对于关键场合，请让标签页保持可见，或者再用一个专门的设备计时器做备份。",
       guideS5: "让倒计时真正有用：设置检查点，而不只是截止日",
       guideB5: "倒计时最好和一个决定绑在一起。对于考试、发布或旅行这类大日子，除了那个遥远的数字，再为真正重要的检查点加几个倒计时，比如稿件交付日或最晚订票日。很大的天数让人觉得抽象、容易被忽略，而十天后的检查点更容易让人行动。给每个事件起一个清楚的名字，删除已经过去的，并且记住这个页面不会发送通知，只有在你打开它的时候才有帮助。",
       scenariosTitle: "适合做什么：几个具体场景",
@@ -129,8 +129,8 @@
       guideB2: "The date countdown subtracts the current moment from the target moment and shows the result as whole days plus hours, minutes and seconds, refreshed every second. It counts exact 24-hour blocks rather than calendar dates, so if a daylight-saving change falls between now and the event, the day count can differ by an hour from what a wall calendar suggests. The day number also drops at the time of day you entered, not at midnight: an event set for 09:00 shows one day fewer every morning at 09:00. Enter the real time, not only the date, whenever it matters.",
       guideS3: "Events in other time zones",
       guideB3: "The tool reads the target date and time in your device's own time zone and stores it as one exact moment. That suits a personal deadline, but for an event in another city, such as a webinar that starts at 15:00 in Zurich, first work out what that moment is in your own local time and enter that. The World Meeting Time Planner (Zone Meet) in this same collection does the conversion visually, including daylight-saving changes. Once saved, the countdown keeps pointing at the same moment even if you later travel to another time zone.",
-      guideS4: "Timer accuracy: why a background tab can run slow",
-      guideB4: "The Timer works by subtracting one second each time the browser fires a one-second tick, rather than by comparing against the clock. Browsers slow down timers in tabs that are hidden or in the background, sometimes to as rarely as one tick a minute, so a timer left in a background tab can run noticeably behind real time. For a work session this rarely matters, but for anything that must be exact, keep the tab visible or use a dedicated device timer. The date countdown does not have this problem, because it recalculates from the real clock on every tick.",
+      guideS4: "Timer accuracy: keeping time in a background tab",
+      guideB4: "The Timer stores the moment it should end and, several times a second, compares that moment with the system clock, rather than counting one second per tick. Browsers slow down timers in tabs that are hidden or in the background, but because the remaining time is always recalculated from the real clock, the display catches up as soon as the next tick runs or you return to the tab. Pausing and resuming keep the remaining time exactly. When time is up the page still shows only an on-screen banner, so for anything critical keep the tab visible or use a dedicated device timer as a backup.",
       guideS5: "Making a countdown useful: checkpoints, not just a deadline",
       guideB5: "A countdown works best when it is tied to a decision. For a big date such as an exam, a launch or a trip, add a few extra countdowns for the checkpoints that really matter, like the day a draft is due or the last day to book, instead of keeping only one distant number. A large day count feels abstract and is easy to ignore; a checkpoint ten days away is easier to act on. Name each event clearly, delete the ones that have passed, and remember that the page sends no notifications, so it only helps while you have it open.",
       scenariosTitle: "What it's good for: a few concrete scenarios",
@@ -203,8 +203,8 @@
       guideB2: "Der Datums-Countdown zieht den aktuellen Zeitpunkt vom Zielzeitpunkt ab und zeigt das Ergebnis als ganze Tage plus Stunden, Minuten und Sekunden an, jede Sekunde aktualisiert. Er zählt exakte 24-Stunden-Blöcke und keine Kalendertage; liegt zwischen jetzt und dem Ereignis eine Sommerzeitumstellung, kann die Tageszahl daher um eine Stunde von dem abweichen, was ein Wandkalender nahelegt. Die Tageszahl sinkt außerdem zu der Uhrzeit, die Sie eingegeben haben, nicht um Mitternacht: Bei einem Ereignis um 09:00 Uhr wird jeden Morgen um 09:00 Uhr ein Tag abgezogen. Geben Sie die tatsächliche Uhrzeit ein, nicht nur das Datum, wenn es darauf ankommt.",
       guideS3: "Ereignisse in anderen Zeitzonen",
       guideB3: "Das Tool liest Zieldatum und Uhrzeit in der Zeitzone Ihres eigenen Geräts und speichert sie als einen exakten Zeitpunkt. Das passt für eine persönliche Frist; bei einem Ereignis in einer anderen Stadt, etwa einem Webinar, das um 15:00 Uhr in Zürich beginnt, rechnen Sie zuerst aus, wie spät es zu diesem Zeitpunkt bei Ihnen ist, und geben Sie diese Zeit ein. Der Weltzeit-Terminplaner (Zone Meet) in derselben Sammlung erledigt die Umrechnung anschaulich, einschließlich Sommerzeitwechseln. Einmal gespeichert, zeigt der Countdown weiterhin auf denselben Zeitpunkt, auch wenn Sie später in eine andere Zeitzone reisen.",
-      guideS4: "Timer-Genauigkeit: warum ein Tab im Hintergrund nachgehen kann",
-      guideB4: "Der Timer arbeitet, indem er jedes Mal eine Sekunde abzieht, wenn der Browser einen Ein-Sekunden-Takt auslöst, und nicht durch einen Vergleich mit der Uhr. Browser drosseln Timer in verborgenen oder im Hintergrund liegenden Tabs, manchmal bis auf einen Takt pro Minute; ein Timer in einem Hintergrund-Tab kann deshalb spürbar hinter der echten Zeit zurückliegen. Für eine Arbeitseinheit spielt das selten eine Rolle, bei allem, was genau sein muss, sollten Sie den Tab sichtbar lassen oder einen eigenen Gerätetimer verwenden. Der Datums-Countdown hat dieses Problem nicht, weil er bei jedem Takt aus der echten Uhr neu rechnet.",
+      guideS4: "Timer-Genauigkeit: Zeitmessung auch im Hintergrund-Tab",
+      guideB4: "Der Timer merkt sich den Zeitpunkt, an dem er enden soll, und vergleicht diesen mehrmals pro Sekunde mit der Systemuhr, statt jede Sekunde einen Schritt zu zählen. Browser drosseln Timer in verborgenen oder im Hintergrund liegenden Tabs, aber weil die Restzeit immer aus der echten Uhr neu berechnet wird, springt die Anzeige beim nächsten Takt oder sobald Sie zum Tab zurückkehren auf den richtigen Wert. Pausieren und Fortsetzen behalten die Restzeit exakt bei. Wenn die Zeit abgelaufen ist, zeigt die Seite weiterhin nur ein Banner auf der Seite an; bei allem Wichtigen sollten Sie den Tab sichtbar lassen oder zusätzlich einen eigenen Gerätetimer verwenden.",
       guideS5: "Einen Countdown nützlich machen: Zwischenziele statt nur einer Frist",
       guideB5: "Ein Countdown funktioniert am besten, wenn er an eine Entscheidung gekoppelt ist. Legen Sie bei einem großen Termin wie einer Prüfung, einer Veröffentlichung oder einer Reise ein paar zusätzliche Countdowns für die wirklich wichtigen Zwischenziele an, etwa die Abgabe eines Entwurfs oder den letzten Buchungstag, statt nur eine ferne Zahl zu behalten. Eine große Tageszahl wirkt abstrakt und lässt sich leicht ignorieren; ein Zwischenziel in zehn Tagen ist leichter anzugehen. Benennen Sie jedes Ereignis klar, löschen Sie vergangene und denken Sie daran, dass die Seite keine Benachrichtigungen sendet und deshalb nur hilft, solange sie geöffnet ist.",
       scenariosTitle: "Wofür es sich eignet: ein paar konkrete Szenarien",
@@ -480,6 +480,34 @@
     timerDisplay.textContent = formatTimer(timerRemaining);
   }
 
+  let timerEndAt = 0; // wall-clock ms at which the running timer ends
+
+  function finishTimer() {
+    clearInterval(timerHandle);
+    timerRemaining = 0;
+    renderTimerDisplay();
+    timerState = "done";
+    timerStart.disabled = false;
+    timerPause.disabled = true;
+    setInputsDisabled(false);
+    updateTimerStatusText();
+  }
+
+  function tickTimer() {
+    if (timerState !== "running") return;
+    timerRemaining = Math.max(0, Math.ceil((timerEndAt - Date.now()) / 1000));
+    if (timerRemaining <= 0) finishTimer();
+    else renderTimerDisplay();
+  }
+
+  function runTimer() {
+    timerEndAt = Date.now() + timerRemaining * 1000;
+    clearInterval(timerHandle);
+    timerHandle = setInterval(tickTimer, 250);
+  }
+
+  document.addEventListener("visibilitychange", tickTimer);
+
   function updateTimerStatusText() {
     if (timerState === "running") timerStatus.textContent = t("timerRunning");
     else if (timerState === "paused") timerStatus.textContent = t("timerPaused");
@@ -509,26 +537,13 @@
     updateTimerStatusText();
     renderTimerDisplay();
 
-    clearInterval(timerHandle);
-    timerHandle = setInterval(() => {
-      timerRemaining -= 1;
-      if (timerRemaining <= 0) {
-        timerRemaining = 0;
-        renderTimerDisplay();
-        clearInterval(timerHandle);
-        timerState = "done";
-        timerStart.disabled = false;
-        timerPause.disabled = true;
-        setInputsDisabled(false);
-        updateTimerStatusText();
-        return;
-      }
-      renderTimerDisplay();
-    }, 1000);
+    runTimer();
   });
 
   timerPause.addEventListener("click", () => {
     if (timerState === "running") {
+      tickTimer();
+      if (timerState !== "running") return;
       clearInterval(timerHandle);
       timerState = "paused";
       timerPause.textContent = t("resumeBtn");
@@ -539,21 +554,7 @@
       timerPause.textContent = t("pauseBtn");
       timerStart.disabled = true;
       updateTimerStatusText();
-      timerHandle = setInterval(() => {
-        timerRemaining -= 1;
-        if (timerRemaining <= 0) {
-          timerRemaining = 0;
-          renderTimerDisplay();
-          clearInterval(timerHandle);
-          timerState = "done";
-          timerStart.disabled = false;
-          timerPause.disabled = true;
-          setInputsDisabled(false);
-          updateTimerStatusText();
-          return;
-        }
-        renderTimerDisplay();
-      }, 1000);
+      runTimer();
     }
   });
 
