@@ -211,6 +211,20 @@
       <div class="faq-list" id="faqList"></div>
     </section>
 
+    <section class="explain-section" id="practical-guide">
+      <h2 data-i18n="guideTitle">A Practical Guide to Timers and Date Countdowns</h2>
+      <h3 data-i18n="guideS1">Choosing timer lengths: Pomodoro and beyond</h3>
+      <p data-i18n="guideB1">The classic Pomodoro pattern is 25 minutes of focused work followed by a 5-minute break, with a longer break of 15 to 30 minutes after four rounds. Some people find that too short for deep work and prefer 50 minutes of work and 10 of rest; others go the other way and use 15-minute blocks to get started on a task they keep avoiding. There is no single correct length: pick one, stick with it for a few days, and adjust only if you keep losing focus before the timer ends or feel cut off in the middle of a thought. The Timer panel accepts any number of minutes and seconds, so you can try these patterns without changing anything else.</p>
+      <h3 data-i18n="guideS2">How the date countdown counts</h3>
+      <p data-i18n="guideB2">The date countdown subtracts the current moment from the target moment and shows the result as whole days plus hours, minutes and seconds, refreshed every second. It counts exact 24-hour blocks rather than calendar dates, so if a daylight-saving change falls between now and the event, the day count can differ by an hour from what a wall calendar suggests. The day number also drops at the time of day you entered, not at midnight: an event set for 09:00 shows one day fewer every morning at 09:00. Enter the real time, not only the date, whenever it matters.</p>
+      <h3 data-i18n="guideS3">Events in other time zones</h3>
+      <p data-i18n="guideB3">The tool reads the target date and time in your device's own time zone and stores it as one exact moment. That suits a personal deadline, but for an event in another city, such as a webinar that starts at 15:00 in Zurich, first work out what that moment is in your own local time and enter that. The World Meeting Time Planner (Zone Meet) in this same collection does the conversion visually, including daylight-saving changes. Once saved, the countdown keeps pointing at the same moment even if you later travel to another time zone.</p>
+      <h3 data-i18n="guideS4">Timer accuracy: why a background tab can run slow</h3>
+      <p data-i18n="guideB4">The Timer works by subtracting one second each time the browser fires a one-second tick, rather than by comparing against the clock. Browsers slow down timers in tabs that are hidden or in the background, sometimes to as rarely as one tick a minute, so a timer left in a background tab can run noticeably behind real time. For a work session this rarely matters, but for anything that must be exact, keep the tab visible or use a dedicated device timer. The date countdown does not have this problem, because it recalculates from the real clock on every tick.</p>
+      <h3 data-i18n="guideS5">Making a countdown useful: checkpoints, not just a deadline</h3>
+      <p data-i18n="guideB5">A countdown works best when it is tied to a decision. For a big date such as an exam, a launch or a trip, add a few extra countdowns for the checkpoints that really matter, like the day a draft is due or the last day to book, instead of keeping only one distant number. A large day count feels abstract and is easy to ignore; a checkpoint ten days away is easier to act on. Name each event clearly, delete the ones that have passed, and remember that the page sends no notifications, so it only helps while you have it open.</p>
+    </section>
+
     <footer class="disclaimer">
       <nav class="footer-links">
         <a href="https://junpingkoch-web.github.io/" target="_blank" rel="noopener">All tools</a>

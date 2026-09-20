@@ -48,6 +48,17 @@
       explainP1: "这个页面其实是两个独立的小工具打包在一起：一个基于分钟的计时器（类似番茄工作法），和一个针对具体目标日期的倒计时。两者都完全依靠浏览器内的 JavaScript 时间戳运算——不涉及任何服务器，也不会向外发送任何数据。",
       explainP2: "两者的数据保存方式不同：你添加的日期倒计时事件（以及语言选择）会保存在浏览器本地存储中，下次打开页面时依然存在并继续计时。分钟计时器则不会保存——如果你在计时进行中刷新页面，它会重置为你最后一次输入的时长。",
       explainP3: "当计时器或倒计时归零时，页面只会显示一个页内提示横幅，并不会发送操作系统级别的通知，所以只有在这个标签页保持打开并可见时才能看到提示。如果你打算在倒计时期间切换到其他标签页或应用，请留意这一点。",
+      guideTitle: "计时器与日期倒计时实用指南",
+      guideS1: "怎么选计时时长：番茄工作法及其他",
+      guideB1: "经典的番茄工作法是专注工作 25 分钟、休息 5 分钟，每做完四轮再休息 15 到 30 分钟。有些人觉得这对深度工作来说太短，更喜欢工作 50 分钟、休息 10 分钟；也有人反过来，用 15 分钟的小块时间来启动一件一直拖着不想做的事。并没有唯一正确的时长：先选一种坚持几天，只有当你总是在计时结束前就走神，或者经常在思路进行到一半时被打断，再去调整。计时器面板可以设置任意的分钟数和秒数，所以你不需要改动其他任何东西就能试这些方案。",
+      guideS2: "日期倒计时是怎么计算的",
+      guideB2: "日期倒计时用目标时刻减去当前时刻，把结果显示为整数天加上小时、分钟和秒，每秒刷新一次。它按精确的 24 小时为一天来计算，而不是按日历日期，所以如果现在到活动之间正好有夏令时切换，天数可能会和挂历上数出来的相差一小时。天数减少的时间点也是你设定的那个钟点，而不是午夜：设定为 09:00 的事件，每天早上 09:00 天数减一。只要精确到时间很重要，就请输入真实的时刻，而不只是日期。",
+      guideS3: "其他时区的活动",
+      guideB3: "工具按你设备自己的时区来读取目标日期和时间，并把它存成一个精确的时刻。这适合个人的截止日期；但如果是另一座城市的活动，比如苏黎世 15:00 开始的网络研讨会，请先算出那个时刻在你本地是几点，再输入。同一个工具集合里的“全球会议时区规划器（Zone Meet）”可以用可视化的方式完成换算，并且会自动处理夏令时。保存之后，即使你以后去了别的时区，倒计时仍然指向同一个时刻。",
+      guideS4: "计时器的准确性：为什么后台标签页会变慢",
+      guideB4: "计时器的工作方式是浏览器每触发一次一秒的定时事件就减去一秒，而不是和时钟对比。浏览器会降低隐藏或在后台的标签页里的定时器频率，有时甚至低到每分钟才触发一次，所以留在后台标签页里的计时器可能明显慢于真实时间。对于一次工作时段来说这通常无所谓，但如果需要精确计时，请让标签页保持可见，或者使用专门的设备计时器。日期倒计时没有这个问题，因为它每次都根据真实时钟重新计算。",
+      guideS5: "让倒计时真正有用：设置检查点，而不只是截止日",
+      guideB5: "倒计时最好和一个决定绑在一起。对于考试、发布或旅行这类大日子，除了那个遥远的数字，再为真正重要的检查点加几个倒计时，比如稿件交付日或最晚订票日。很大的天数让人觉得抽象、容易被忽略，而十天后的检查点更容易让人行动。给每个事件起一个清楚的名字，删除已经过去的，并且记住这个页面不会发送通知，只有在你打开它的时候才有帮助。",
       scenariosTitle: "适合做什么：几个具体场景",
       scenario1Name: "番茄工作法",
       scenario1Body: "把分钟计时器设为25分钟专注+5分钟休息，循环几轮，比盯着手机上的时钟更不容易分心。",
@@ -111,6 +122,17 @@
       explainP1: "This page is really two small independent tools bundled together: a minute-based Timer (Pomodoro-style) and a Date Countdown for specific target dates. Both run purely on JavaScript timestamp math inside your browser — there's no server involved, and nothing is sent anywhere.",
       explainP2: "Persistence works differently for each: your date-countdown events (and your language choice) are saved to this browser's local storage, so they're still there and still counting the next time you open the page. The minute Timer, on the other hand, isn't saved — if you reload the page while it's running, it resets to your last-entered duration.",
       explainP3: "When a timer or countdown reaches zero, the page shows an on-screen banner — it doesn't send an operating-system notification, so you'll only see it while this tab is open and visible. Keep that in mind if you're planning to switch away to another tab or app while it counts down.",
+      guideTitle: "A Practical Guide to Timers and Date Countdowns",
+      guideS1: "Choosing timer lengths: Pomodoro and beyond",
+      guideB1: "The classic Pomodoro pattern is 25 minutes of focused work followed by a 5-minute break, with a longer break of 15 to 30 minutes after four rounds. Some people find that too short for deep work and prefer 50 minutes of work and 10 of rest; others go the other way and use 15-minute blocks to get started on a task they keep avoiding. There is no single correct length: pick one, stick with it for a few days, and adjust only if you keep losing focus before the timer ends or feel cut off in the middle of a thought. The Timer panel accepts any number of minutes and seconds, so you can try these patterns without changing anything else.",
+      guideS2: "How the date countdown counts",
+      guideB2: "The date countdown subtracts the current moment from the target moment and shows the result as whole days plus hours, minutes and seconds, refreshed every second. It counts exact 24-hour blocks rather than calendar dates, so if a daylight-saving change falls between now and the event, the day count can differ by an hour from what a wall calendar suggests. The day number also drops at the time of day you entered, not at midnight: an event set for 09:00 shows one day fewer every morning at 09:00. Enter the real time, not only the date, whenever it matters.",
+      guideS3: "Events in other time zones",
+      guideB3: "The tool reads the target date and time in your device's own time zone and stores it as one exact moment. That suits a personal deadline, but for an event in another city, such as a webinar that starts at 15:00 in Zurich, first work out what that moment is in your own local time and enter that. The World Meeting Time Planner (Zone Meet) in this same collection does the conversion visually, including daylight-saving changes. Once saved, the countdown keeps pointing at the same moment even if you later travel to another time zone.",
+      guideS4: "Timer accuracy: why a background tab can run slow",
+      guideB4: "The Timer works by subtracting one second each time the browser fires a one-second tick, rather than by comparing against the clock. Browsers slow down timers in tabs that are hidden or in the background, sometimes to as rarely as one tick a minute, so a timer left in a background tab can run noticeably behind real time. For a work session this rarely matters, but for anything that must be exact, keep the tab visible or use a dedicated device timer. The date countdown does not have this problem, because it recalculates from the real clock on every tick.",
+      guideS5: "Making a countdown useful: checkpoints, not just a deadline",
+      guideB5: "A countdown works best when it is tied to a decision. For a big date such as an exam, a launch or a trip, add a few extra countdowns for the checkpoints that really matter, like the day a draft is due or the last day to book, instead of keeping only one distant number. A large day count feels abstract and is easy to ignore; a checkpoint ten days away is easier to act on. Name each event clearly, delete the ones that have passed, and remember that the page sends no notifications, so it only helps while you have it open.",
       scenariosTitle: "What it's good for: a few concrete scenarios",
       scenario1Name: "Pomodoro-style focus sessions",
       scenario1Body: "Set the minute timer to 25 minutes of focus + 5 minutes of rest and cycle through a few rounds — easier to stick to than watching the clock on your phone.",
@@ -174,6 +196,17 @@
       explainP1: "Diese Seite ist eigentlich zwei kleine, unabhängige Tools in einem: ein minutenbasierter Timer (im Pomodoro-Stil) und ein Datums-Countdown für konkrete Zieltermine. Beide laufen rein über JavaScript-Zeitstempel-Berechnung in deinem Browser — es gibt keinen Server, nichts wird irgendwohin gesendet.",
       explainP2: "Die Speicherung funktioniert bei beiden unterschiedlich: Deine Datums-Countdown-Ereignisse (und deine Sprachwahl) werden im lokalen Speicher dieses Browsers gesichert, sodass sie beim nächsten Öffnen der Seite noch da sind und weiterlaufen. Der Minuten-Timer dagegen wird nicht gespeichert — lädst du die Seite neu, während er läuft, setzt er sich auf deine zuletzt eingegebene Dauer zurück.",
       explainP3: "Wenn ein Timer oder Countdown bei null ankommt, zeigt die Seite ein Banner direkt auf der Seite an — es wird keine Betriebssystem-Benachrichtigung gesendet, du siehst es also nur, solange dieser Tab geöffnet und sichtbar ist. Denk daran, falls du planst, während des Countdowns zu einem anderen Tab oder einer anderen App zu wechseln.",
+      guideTitle: "Praxisleitfaden: Timer und Datums-Countdowns",
+      guideS1: "Timer-Längen wählen: Pomodoro und darüber hinaus",
+      guideB1: "Das klassische Pomodoro-Muster sind 25 Minuten konzentrierte Arbeit, gefolgt von 5 Minuten Pause, und nach vier Runden eine längere Pause von 15 bis 30 Minuten. Manchen ist das für konzentriertes Arbeiten zu kurz, sie bevorzugen 50 Minuten Arbeit und 10 Minuten Pause; andere gehen den umgekehrten Weg und nutzen 15-Minuten-Blöcke, um eine Aufgabe anzufangen, die sie ständig vor sich herschieben. Eine einzig richtige Länge gibt es nicht: Wählen Sie eine, bleiben Sie ein paar Tage dabei und ändern Sie erst, wenn Sie regelmäßig vor dem Ende des Timers die Konzentration verlieren oder mitten im Gedanken unterbrochen werden. Das Timer-Feld akzeptiert beliebige Minuten und Sekunden, sodass Sie diese Muster ausprobieren können, ohne etwas anderes zu ändern.",
+      guideS2: "Wie der Datums-Countdown zählt",
+      guideB2: "Der Datums-Countdown zieht den aktuellen Zeitpunkt vom Zielzeitpunkt ab und zeigt das Ergebnis als ganze Tage plus Stunden, Minuten und Sekunden an, jede Sekunde aktualisiert. Er zählt exakte 24-Stunden-Blöcke und keine Kalendertage; liegt zwischen jetzt und dem Ereignis eine Sommerzeitumstellung, kann die Tageszahl daher um eine Stunde von dem abweichen, was ein Wandkalender nahelegt. Die Tageszahl sinkt außerdem zu der Uhrzeit, die Sie eingegeben haben, nicht um Mitternacht: Bei einem Ereignis um 09:00 Uhr wird jeden Morgen um 09:00 Uhr ein Tag abgezogen. Geben Sie die tatsächliche Uhrzeit ein, nicht nur das Datum, wenn es darauf ankommt.",
+      guideS3: "Ereignisse in anderen Zeitzonen",
+      guideB3: "Das Tool liest Zieldatum und Uhrzeit in der Zeitzone Ihres eigenen Geräts und speichert sie als einen exakten Zeitpunkt. Das passt für eine persönliche Frist; bei einem Ereignis in einer anderen Stadt, etwa einem Webinar, das um 15:00 Uhr in Zürich beginnt, rechnen Sie zuerst aus, wie spät es zu diesem Zeitpunkt bei Ihnen ist, und geben Sie diese Zeit ein. Der Weltzeit-Terminplaner (Zone Meet) in derselben Sammlung erledigt die Umrechnung anschaulich, einschließlich Sommerzeitwechseln. Einmal gespeichert, zeigt der Countdown weiterhin auf denselben Zeitpunkt, auch wenn Sie später in eine andere Zeitzone reisen.",
+      guideS4: "Timer-Genauigkeit: warum ein Tab im Hintergrund nachgehen kann",
+      guideB4: "Der Timer arbeitet, indem er jedes Mal eine Sekunde abzieht, wenn der Browser einen Ein-Sekunden-Takt auslöst, und nicht durch einen Vergleich mit der Uhr. Browser drosseln Timer in verborgenen oder im Hintergrund liegenden Tabs, manchmal bis auf einen Takt pro Minute; ein Timer in einem Hintergrund-Tab kann deshalb spürbar hinter der echten Zeit zurückliegen. Für eine Arbeitseinheit spielt das selten eine Rolle, bei allem, was genau sein muss, sollten Sie den Tab sichtbar lassen oder einen eigenen Gerätetimer verwenden. Der Datums-Countdown hat dieses Problem nicht, weil er bei jedem Takt aus der echten Uhr neu rechnet.",
+      guideS5: "Einen Countdown nützlich machen: Zwischenziele statt nur einer Frist",
+      guideB5: "Ein Countdown funktioniert am besten, wenn er an eine Entscheidung gekoppelt ist. Legen Sie bei einem großen Termin wie einer Prüfung, einer Veröffentlichung oder einer Reise ein paar zusätzliche Countdowns für die wirklich wichtigen Zwischenziele an, etwa die Abgabe eines Entwurfs oder den letzten Buchungstag, statt nur eine ferne Zahl zu behalten. Eine große Tageszahl wirkt abstrakt und lässt sich leicht ignorieren; ein Zwischenziel in zehn Tagen ist leichter anzugehen. Benennen Sie jedes Ereignis klar, löschen Sie vergangene und denken Sie daran, dass die Seite keine Benachrichtigungen sendet und deshalb nur hilft, solange sie geöffnet ist.",
       scenariosTitle: "Wofür es sich eignet: ein paar konkrete Szenarien",
       scenario1Name: "Pomodoro-Fokusphasen",
       scenario1Body: "Stelle den Minuten-Timer auf 25 Minuten Fokus + 5 Minuten Pause und durchlaufe ein paar Runden — leichter durchzuhalten, als ständig auf die Handyuhr zu schauen.",
@@ -195,7 +228,7 @@
     }
   };
 
-  let currentLang = "de";
+  let currentLang = "en";
   try {
     const saved = localStorage.getItem(LANG_KEY);
     if (saved && i18n[saved]) {
